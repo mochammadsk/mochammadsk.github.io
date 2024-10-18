@@ -212,7 +212,8 @@ a {
 
 a:hover {
   border-bottom-color: transparent !important;
-  color: #6bd4c8;
+  /* color: #6bd4c8; */
+  cursor: pointer;
 }
 
 strong,
@@ -3639,6 +3640,18 @@ body.is-preload #header:after {
 .social-media {
   display: flex;
   justify-content: center;
+}
+
+.social-media .icons .fa-linkedin:hover {
+  color: #0063c2;
+}
+
+.social-media .icons .fa-facebook-messenger:hover {
+  color: #087aff;
+}
+
+.social-media .icons .fa-envelope:hover {
+  color: #c54134;
 }
 
 .row.gtr-150 .col-6 .profile-img {
