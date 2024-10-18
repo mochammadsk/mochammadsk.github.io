@@ -3636,19 +3636,23 @@ body.is-preload #header:after {
 
 /* Custom CSS */
 
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
 .row.gtr-150 .col-6 .profile-img {
   display: flex;
   justify-content: center;
-  /* padding-left: 2em; */
 }
 
 .profile-img img {
-  width: 350px;
-  height: 350px;
+  width: 18em;
+  height: 18em;
   border-radius: 50%;
   object-fit: cover;
   border-width: 1px;
   border-style: solid;
   border-color: #dddddd;
-  padding: 13px;
+  padding: 0.8em;
 }
