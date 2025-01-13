@@ -3696,7 +3696,6 @@ body.is-preload #header:after {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: larger; */
 }
 
 .row.gtr-150 .col-6 .profile-img {
