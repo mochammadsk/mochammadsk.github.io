@@ -3346,7 +3346,6 @@ body.is-preload #header:after {
 }
 
 /* XLarge */
-
 @media screen and (max-width: 1680px) {
   /* Basic */
 
@@ -3357,6 +3356,18 @@ body.is-preload #header:after {
     font-size: 14pt;
   }
 
+  /* Photo Profile */
+  .profile-img img {
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    object-fit: cover;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dddddd;
+    padding: 0.8em 2em;
+  }
+
   /* Header */
 
   #header {
@@ -3365,7 +3376,6 @@ body.is-preload #header:after {
 }
 
 /* Large */
-
 @media screen and (max-width: 1140px) {
   /* Basic */
 
@@ -3395,6 +3405,16 @@ body.is-preload #header:after {
     height: 8em;
     line-height: 8em;
     width: 8em;
+  }
+
+  /* Photo Profile */
+  .row.gtr-150 .col-6 .profile-img {
+    padding: 2em 0;
+  }
+
+  .row.gtr-150 .col-6 .profile-img img {
+    width: 17em;
+    height: 17em;
   }
 
   /* Main */
@@ -3427,7 +3447,6 @@ body.is-preload #header:after {
 }
 
 /* Medium */
-
 @media screen and (max-width: 980px) {
   /* List */
 
@@ -3445,6 +3464,16 @@ body.is-preload #header:after {
 
   .main {
     padding: 5em 3em 3em 3em;
+  }
+
+  /* Photo Profile */
+  .row.gtr-150 .col-6 .profile-img {
+    padding: 2em 0;
+  }
+
+  .row.gtr-150 .col-6 .profile-img img {
+    width: 17em;
+    height: 17em;
   }
 
   /* Header */
@@ -3473,7 +3502,6 @@ body.is-preload #header:after {
 }
 
 /* Small */
-
 @media screen and (max-width: 736px) {
   /* Basic */
 
@@ -3533,6 +3561,16 @@ body.is-preload #header:after {
     line-height: 3em;
   }
 
+  /* Photo Profile */
+  .row.gtr-150 .col-6 .profile-img {
+    padding: 2em 0;
+  }
+
+  .row.gtr-150 .col-6 .profile-img img {
+    width: 17em;
+    height: 17em;
+  }
+
   /* Main */
 
   .main {
@@ -3557,7 +3595,6 @@ body.is-preload #header:after {
 }
 
 /* XSmall */
-
 @media screen and (max-width: 480px) {
   /* Button */
 
@@ -3566,6 +3603,16 @@ body.is-preload #header:after {
   input[type='button'],
   .button {
     padding: 0;
+  }
+
+  /* Photo Profile */
+  .row.gtr-150 .col-6 .profile-img {
+    padding: 2em 0;
+  }
+
+  .row.gtr-150 .col-6 .profile-img img {
+    width: 17em;
+    height: 17em;
   }
 
   /* Main */
@@ -3607,13 +3654,22 @@ body.is-preload #header:after {
 }
 
 /* XXSmall */
-
 @media screen and (max-width: 320px) {
   /* Basic */
 
   html,
   body {
     min-width: 320px;
+  }
+
+  /* Photo Profile */
+  .row.gtr-150 .col-6 .profile-img {
+    padding: 2em 0;
+  }
+
+  .row.gtr-150 .col-6 .profile-img img {
+    width: 17em;
+    height: 17em;
   }
 
   /* Main */
@@ -3636,7 +3692,6 @@ body.is-preload #header:after {
 }
 
 /* Custom CSS */
-
 .social-media {
   display: flex;
   justify-content: center;
