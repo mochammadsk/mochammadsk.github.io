@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let months =
       (end.getFullYear() - start.getFullYear()) * 12 +
       (end.getMonth() - start.getMonth()) +
-      1; // ← ini penting
+      1;
 
     const years = Math.floor(months / 12);
     months = months % 12;
