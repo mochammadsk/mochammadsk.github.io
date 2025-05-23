@@ -8,23 +8,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const [startText, endText] = em.textContent.split(' - ');
     const start = new Date(startText + ' 1');
-    const end =
-      endText.trim() === 'Present' ? new Date() : new Date(endText + ' 1');
+    const today = new Date();
 
-    let months = (end.getFullYear() - start.getFullYear()) * 12;
-    months += end.getMonth() - start.getMonth();
+    const end =
+      endText.trim() === 'Present'
+        ? new Date(today.getFullYear(), today.getMonth(), 1)
+        : new Date(endText + ' 1');
+
+    let months =
+      (end.getFullYear() - start.getFullYear()) * 12 +
+      (end.getMonth() - start.getMonth()) +
+      1; // ← ini penting
 
     const years = Math.floor(months / 12);
     months = months % 12;
 
     const durationText =
       years > 0 && months > 0
-        ? ` (${years} year${years > 1 ? 's' : ''} ${months} month${
+        ? ` ${years} year${years > 1 ? 's' : ''} ${months} month${
             months > 1 ? 's' : ''
-          })`
+          }`
         : years > 0
-        ? ` (${years} year${years > 1 ? 's' : ''})`
-        : ` (${months} month${months > 1 ? 's' : ''})`;
+        ? ` ${years} year${years > 1 ? 's' : ''}`
+        : ` ${months} month${months > 1 ? 's' : ''}`;
 
     span.textContent = durationText;
   });
