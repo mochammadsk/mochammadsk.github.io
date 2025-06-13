@@ -3504,7 +3504,6 @@ body.is-preload #header:after {
 /* Small */
 @media screen and (max-width: 736px) {
   /* Basic */
-
   body,
   input,
   select,
@@ -3529,7 +3528,6 @@ body.is-preload #header:after {
   }
 
   /* List */
-
   ul.major-icons li {
     padding: 1.5em;
   }
@@ -3545,13 +3543,11 @@ body.is-preload #header:after {
   }
 
   /* Icon */
-
   .icon.major {
     margin: 0 0 1em 0;
   }
 
   /* Button */
-
   input[type='submit'],
   input[type='reset'],
   input[type='button'],
@@ -3559,6 +3555,20 @@ body.is-preload #header:after {
   .button {
     height: 3em;
     line-height: 3em;
+  }
+
+  /* Introduction */
+  #introduction .row {
+    flex-direction: column;
+  }
+
+  /* Mengatur urutan elemen */
+  #introduction .row .col-6:nth-child(1) {
+    order: 2;
+  }
+
+  #introduction .row .col-6:nth-child(2) {
+    order: 1;
   }
 
   /* Photo Profile */
@@ -3572,13 +3582,11 @@ body.is-preload #header:after {
   }
 
   /* Main */
-
   .main {
     padding: 3em 1.5em 1em 1.5em;
   }
 
   /* Header */
-
   #header {
     padding: 4em 3em 4em 3em;
   }
@@ -3588,7 +3596,6 @@ body.is-preload #header:after {
   }
 
   /* Footer */
-
   #footer {
     padding: 3em 1.5em 3em 1.5em;
   }
