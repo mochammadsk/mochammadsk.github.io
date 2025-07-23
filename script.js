@@ -19,6 +19,7 @@ const currentTheme =
     : 'light');
 
 htmlElement.setAttribute('theme', currentTheme);
+themeToggle.checked = currentTheme === 'dark';
 updateLogo(currentTheme);
 
 themeToggle.addEventListener('click', () => {
