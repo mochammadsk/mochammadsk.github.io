@@ -1,21 +1,23 @@
 :root {
-  /* Light Mode */
-  --background: #faf9f6;
-  --text-main: #1c1c1e;
-  --text-secondary: #6e6e73;
-  --background-card: rgba(255, 255, 255, 0.03);
-  --background-card-hover: rgba(255, 255, 255, 1);
-  --border: #d8d9db;
+  --background: #fefefe;
+  --text-main: #1a1a1a;
+  --text-secondary: #555f70;
+  --accent: #3b82f6; /* biru cerah */
+  --background-card: #ffffff;
+  --background-card-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --sidebar: #ffffff;
 }
 
 [theme='dark'] {
-  /* Dark Mode */
-  --background: #0b0f19;
-  --text-main: #e6edf3;
-  --text-secondary: #8b9eb1;
-  --background-card: rgba(255, 255, 255, 0.5);
-  --background-card-hover: rgba(255, 255, 255, 0.05);
+  --background: #0d1117;
+  --text-main: #f4f4f5;
+  --text-secondary: #94a3b8;
+  --accent: #60a5fa; /* biru muda */
+  --background-card: #161b22;
+  --background-card-hover: #1f2937;
   --border: #30363d;
+  --sidebar: #161b22;
 }
 
 *,
@@ -69,7 +71,7 @@ a:hover {
   left: 0;
   width: 16rem;
   height: 100vh;
-  background-color: var(--header-nav);
+  background-color: var(--sidebar);
   border-right: 1px solid var(--border);
   padding: 3rem 1rem 1.5rem 1rem;
   display: flex;

@@ -32,6 +32,21 @@ themeToggle.addEventListener('click', () => {
 // Year in Footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Toggle Sidebar
 menuToggle.addEventListener('click', () => {
   sidebar.classList.toggle('active');
+});
+
+// Close Sidebar on Outside Click
+document.addEventListener('click', (event) => {
+  const isClickInsideSidebar = sidebar.contains(event.target);
+  const isClickOnMenuToggle = menuToggle.contains(event.target);
+
+  if (
+    sidebar.classList.contains('active') &&
+    !isClickInsideSidebar &&
+    !isClickOnMenuToggle
+  ) {
+    sidebar.classList.remove('active');
+  }
 });
