@@ -35,7 +35,8 @@ body {
   background-color: var(--background);
   color: var(--text-main);
   line-height: 1.8;
-  padding-top: 100px;
+  padding-left: 16rem;
+  padding-top: 1rem;
   transition: background-color 0.3s, color 0.3s;
 }
 header {
@@ -53,14 +54,13 @@ header {
   z-index: 1000;
 }
 main {
-  width: 100%;
   max-width: 1024px;
   margin: 0 auto;
   padding: 3rem;
 }
 footer {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border);
   color: var(--text-secondary);
@@ -77,6 +77,117 @@ a {
 }
 a:hover {
   opacity: 0.8;
+}
+
+/* Gaya untuk sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 100vh;
+  background-color: var(--header-nav);
+  border-right: 1px solid var(--border);
+  padding: 3rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  z-index: 1000;
+}
+
+.sidebar .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .nav-links a {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.sidebar .nav-links a:hover {
+  color: var(--text-main);
+}
+
+.sidebar .theme-toggle {
+  margin-top: auto;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--text-secondary);
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.theme-switch .slider::before {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--background);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Aktif (dark mode) */
+.theme-switch input:checked + .slider {
+  background-color: var(--text-main);
+}
+
+.theme-switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.theme-label {
+  user-select: none;
 }
 
 .row-1 {
@@ -109,58 +220,7 @@ a:hover {
   flex-direction: column;
   gap: 2.5rem;
 }
-.col-4 {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-}
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1024px;
-}
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 1rem;
-  color: var(--text-secondary);
-}
-.nav-links a:hover {
-  color: var(--text-main);
-  opacity: 1;
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text-secondary);
-  width: 24px;
-  height: 24px;
-}
-.theme-toggle:hover {
-  color: var(--text-main);
-}
-.theme-toggle svg {
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-.lightmode {
-  display: none;
-}
-[theme='dark'] .darkmode {
-  display: none;
-}
-[theme='dark'] .lightmode {
-  display: block;
-}
 .img {
   width: 275px;
   height: 275px;
@@ -169,7 +229,7 @@ a:hover {
   border: 4px solid var(--background-card);
 }
 .logo {
-  width: 70px;
+  width: 100px;
 }
 
 .social-icons {
