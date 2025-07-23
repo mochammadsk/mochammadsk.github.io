@@ -6,7 +6,6 @@
   --background-card: rgba(255, 255, 255, 0.03);
   --background-card-hover: rgba(255, 255, 255, 1);
   --border: #d8d9db;
-  --header-nav: rgba(249, 250, 251, 0.7);
 }
 
 [theme='dark'] {
@@ -17,7 +16,6 @@
   --background-card: rgba(255, 255, 255, 0.5);
   --background-card-hover: rgba(255, 255, 255, 0.05);
   --border: #30363d;
-  --header-nav: rgba(13, 17, 23, 0.7);
 }
 
 *,
@@ -40,7 +38,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 main {
-  max-width: 1024px;
+  max-width: 64rem;
   margin: 0 auto;
   padding: 3rem;
 }
@@ -157,42 +155,42 @@ a:hover {
   user-select: none;
 }
 
-.row-1 {
+.introduction {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  padding: 1.5rem;
 }
-.row-2 {
+.introduction article {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   gap: 2.5rem;
 }
-.col-1 {
+.social {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.col-2 {
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   gap: 1.5rem;
 }
-.col-3 {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+.content {
+  line-height: 2;
+}
+
+.img-wrapper {
+  width: 275px;
+  height: 275px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
 }
 .img {
   width: 275px;
   height: 275px;
   border-radius: 50%;
+  padding: 0.5rem;
   object-fit: cover;
-  border: 4px solid var(--background-card);
 }
+
 .logo {
   width: 100px;
 }
@@ -205,7 +203,6 @@ a:hover {
 .icons i {
   color: var(--text-main);
 }
-
 .menu-toggle {
   display: none !important;
 }
@@ -218,7 +215,7 @@ a:hover {
     left: -16rem;
     width: 16rem;
     height: 100vh;
-    background-color: var(--header-nav);
+    background-color: var(--background);
     transition: left 0.3s ease;
     z-index: 999;
   }
@@ -243,11 +240,11 @@ a:hover {
 
   /* Adjust main content */
   body {
-    padding: 0 3rem;
+    padding: 3rem 1.5rem;
   }
 
   main {
-    padding: 10 1rem;
+    padding: 0;
   }
 
   article {
@@ -260,23 +257,46 @@ a:hover {
     padding: 1rem;
   }
 
+  .introduction article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .content {
+    line-height: 2;
+  }
+
   /* Typography scaling */
   .nav-links a {
     font-size: 0.9rem;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
-  h2 {
-    font-size: 1.25rem;
+  h3 {
+    font-size: 1.1rem;
   }
 
   .theme-label {
     font-size: 0.8rem;
   }
 
+  .img-wrapper {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+  }
   .img {
     width: 200px;
     height: 200px;
