@@ -210,8 +210,8 @@ a:hover {
   .sidebar {
     position: fixed;
     top: 0;
-    left: -16rem;
-    width: 16rem;
+    left: -17rem;
+    width: 17rem;
     height: 100vh;
     background-color: var(--background);
     transition: left 0.3s ease;
