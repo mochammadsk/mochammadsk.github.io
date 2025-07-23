@@ -39,20 +39,6 @@ body {
   padding-top: 1rem;
   transition: background-color 0.3s, color 0.3s;
 }
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  background-color: var(--header-nav);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-  z-index: 1000;
-}
 main {
   max-width: 1024px;
   margin: 0 auto;
@@ -185,7 +171,6 @@ a:hover {
   align-items: center;
   gap: 2.5rem;
 }
-
 .col-1 {
   display: flex;
   flex-direction: column;
@@ -201,7 +186,6 @@ a:hover {
   flex-direction: column;
   gap: 2.5rem;
 }
-
 .img {
   width: 275px;
   height: 275px;
@@ -212,29 +196,89 @@ a:hover {
 .logo {
   width: 100px;
 }
-
 .social-icons {
   margin-top: 2rem;
   display: flex;
   gap: 1.75rem;
   font-size: 1.75rem;
 }
-
 .icons i {
   color: var(--text-main);
 }
 
+.menu-toggle {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
-  body {
-    padding-top: 60px;
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -16rem;
+    width: 16rem;
+    height: 100vh;
+    background-color: var(--header-nav);
+    transition: left 0.3s ease;
+    z-index: 999;
   }
-  .nav-menu a {
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* Show a menu toggle button */
+  .menu-toggle {
+    display: block !important;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    z-index: 1000;
+    color: var(--text-main);
+    cursor: pointer;
+  }
+
+  /* Adjust main content */
+  body {
+    padding: 0 3rem;
+  }
+
+  main {
+    padding: 10 1rem;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .introduction {
+    padding: 1rem;
+  }
+
+  /* Typography scaling */
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .theme-label {
     font-size: 0.8rem;
   }
-  .hero h1 {
-    font-size: 2.25rem;
-  }
-  h2 {
-    font-size: 1.5rem;
+
+  .img {
+    width: 200px;
+    height: 200px;
   }
 }

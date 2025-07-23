@@ -1,6 +1,8 @@
 const htmlElement = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
+const menuToggle = document.getElementById('menu-toggle');
 const logoImg = document.getElementById('logo');
+const sidebar = document.querySelector('.sidebar');
 
 // Update Logo
 function updateLogo(theme) {
@@ -29,3 +31,7 @@ themeToggle.addEventListener('click', () => {
 
 // Year in Footer
 document.getElementById('year').textContent = new Date().getFullYear();
+
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
