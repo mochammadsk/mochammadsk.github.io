@@ -168,7 +168,7 @@ a:hover {
   object-fit: cover;
   border: 4px solid var(--background-card);
 }
-.logo img {
+.logo {
   width: 70px;
 }
 
