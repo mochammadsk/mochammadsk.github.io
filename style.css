@@ -112,7 +112,7 @@ p {
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.15s ease;
 }
 .theme-toogle i {
   position: absolute;
@@ -120,11 +120,11 @@ p {
   opacity: 0;
   transition: opacity 0.15s;
 }
-html:not([theme='dark']) .theme-toogle .fa-moon {
+html[theme='dark'] .theme-toogle .fa-moon {
   opacity: 1;
   color: #213448;
 }
-html[theme='dark'] .theme-toogle .fa-sun {
+html:not([theme='dark']) .theme-toogle .fa-sun {
   opacity: 1;
   color: #ff9b00;
 }
