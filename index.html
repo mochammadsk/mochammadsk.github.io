@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mochammad Syahrul Kurniawan</title>
     <link href="images/logo.png" rel="icon" />
@@ -26,67 +26,150 @@
   </head>
 
   <body>
-    <i class="fa-solid fa-bars menu-toggle" id="menu-toggle"></i>
-    <aside class="sidebar">
-      <div class="sidebar-top">
-        <img id="logo" class="logo" src="images/logo-light.png" alt="logo" />
-        <ul class="menu">
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#project">Project</a></li>
-        </ul>
-      </div>
-      <div class="sidebar-bottom">
-        <div class="theme-switch-wrapper" title="Toggle Theme">
-          <span class="theme-label">Light</span>
-          <label class="theme-switch">
-            <input type="checkbox" id="theme-toggle" />
-            <span class="slider"></span>
-          </label>
-          <span class="theme-label">Dark</span>
+    <div class="container">
+      <!-- Profile -->
+      <section class="hero">
+        <div class="profile">
+          <img src="images/profile.jpg" alt="profile-picture" />
+
+          <button
+            class="theme-toogle"
+            aria-label="Toggle Theme"
+            title="Toggle Theme"
+          >
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+          </button>
         </div>
-        <footer>
-          Mochammad Syahrul Kurniawan
-          <br />
-          &copy; <span id="year"></span>.
-        </footer>
-      </div>
-    </aside>
-
-    <main>
-      <!-- Introduction -->
-      <section id="introduction" class="introduction">
-        <article>
-          <div class="img-wrapper">
-            <img src="images/profile.jpg" alt="profile.jpg" class="img" />
-          </div>
-
-          <div class="content">
-            <h1>Mochammad Syahrul Kurniawan</h1>
-            <h3>Full Stack Developer</h3>
-            <p>
-              I'm a Full Stack Web Developer with experience building web
-              applications using Node.js and Laravel. I'm accustomed to handling
-              front-end and back-end development. I'm open to collaborating on
-              projects.
-            </p>
-          </div>
-        </article>
-
-        <div class="social icons">
-          <a href="https://www.linkedin.com/in/mochammadsk/" target="_blank">
-            <i class="fab fa-linkedin fa-2x"></i>
+        <h1>Mochammad Syahrul Kurniawan</h1>
+        <p class="position">Web Developer</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+          eaque officia nisi molestiae provident enim commodi maiores amet
+          aperiam ratione! Perferendis officiis dolorum ut earum quis tempore
+          sunt expedita. Velit?
+        </p>
+        <div class="social">
+          <a href="https://github.com/mochammadsk/" target="_blank">
+            <i class="fa-brands fa-github"></i>
           </a>
-          <a href="https://github.com/mochammadsk/ " target="_blank">
-            <i class="fab fa-github fa-2x"></i>
+          <a href="https://www.linkedin.com/in/mochammadsk/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
           </a>
           <a href="mailto:mochrul.kurniawan@gmail.com" target="_blank">
-            <i class="fas fa-envelope fa-2x"></i>
+            <i class="fa-solid fa-envelope"></i>
           </a>
         </div>
       </section>
-    </main>
+
+      <main>
+        <!-- Navbar -->
+        <section class="navbar">
+          <nav>
+            <ul>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#project">Project</a></li>
+            </ul>
+          </nav>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+          <div class="title">
+            <h2>Experience</h2>
+          </div>
+          <div class="column">
+            <div class="card">
+              <h3>PT. Dunia Tekonologi Nusantara</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis excepturi ipsum molestias quasi iure quos odio sunt in,
+                beatae quod quia, omnis dolorem quas inventore hic.
+                Exercitationem aperiam neque dolor?
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>NunWaYo</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis excepturi ipsum molestias quasi iure quos odio sunt in,
+                beatae quod quia, omnis dolorem quas inventore hic.
+                Exercitationem aperiam neque dolor?
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+          <div class="title">
+            <h2>Education</h2>
+          </div>
+          <div class="card">
+            <h3>Universitas Pendidikan Ganesha</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis
+              excepturi ipsum molestias quasi iure quos odio sunt in, beatae
+              quod quia, omnis dolorem quas inventore hic. Exercitationem
+              aperiam neque dolor?
+            </p>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+          <div class="title">
+            <h2>Skills</h2>
+          </div>
+          <div class="card">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis
+              excepturi ipsum molestias quasi iure quos odio sunt in, beatae
+              quod quia, omnis dolorem quas inventore hic. Exercitationem
+              aperiam neque dolor?
+            </p>
+          </div>
+        </section>
+
+        <!-- Project -->
+        <section id="project">
+          <div class="title">
+            <h2>Project</h2>
+          </div>
+          <div class="row">
+            <div class="card">
+              <h3>StayHub</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis excepturi ipsum molestias quasi iure quos odio sunt in,
+                beatae quod quia, omnis dolorem quas inventore hic.
+                Exercitationem aperiam neque dolor?
+              </p>
+            </div>
+            <div class="card">
+              <h3>Spendee</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corporis excepturi ipsum molestias quasi iure quos odio sunt in,
+                beatae quod quia, omnis dolorem quas inventore hic.
+                Exercitationem aperiam neque dolor?
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          Developed by Mochammad Syahrul Kurniawan <br />
+          &copy;
+          <span id="year">2025</span>
+        </p>
+      </footer>
+    </div>
 
     <script src="script.js"></script>
   </body>
