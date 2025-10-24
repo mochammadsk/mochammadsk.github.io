@@ -1,13 +1,12 @@
-// ===== Utils
 const $ = (sel) => document.querySelector(sel);
 const root = document.documentElement;
 const THEME_KEY = 'pref-theme';
 
-// (Opsional) set tahun jika ada elemen #year
+// Update year in footer
 const el = document.getElementById('year');
 if (el) el.textContent = new Date().getFullYear();
 
-// ===== Smooth scroll (fallback untuk Safari lama)
+// Smooth scroll for internal links
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener('click', (e) => {
     const href = a.getAttribute('href');
@@ -19,7 +18,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   });
 });
 
-// ===== THEME
+// Theme toggle
 function setTheme(mode) {
   const isDark = mode === 'dark';
   if (isDark) root.setAttribute('theme', 'dark');
@@ -61,7 +60,7 @@ if (window.matchMedia) {
   });
 }
 
-// ===== Nav Active Indicator (border-bottom)
+// Scroll-spy for navbar active link
 (function () {
   const nav = document.querySelector('.navbar');
   if (!nav) return;
@@ -69,7 +68,6 @@ if (window.matchMedia) {
   const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
   if (!links.length) return;
 
-  // ambil target section untuk tiap link
   const items = links
     .map((a) => {
       const id = a.getAttribute('href').slice(1);
@@ -78,18 +76,18 @@ if (window.matchMedia) {
     })
     .filter((x) => x.sec);
 
-  // helper: set active link
+  // Helper: set active link
   function setActive(link) {
     links.forEach((l) => l.classList.remove('active'));
     if (link) link.classList.add('active');
   }
 
-  // on click: langsung tandai aktif (scroll-spy nanti akan menyempurnakan)
+  // Helper: click link to set active
   links.forEach((l) => {
     l.addEventListener('click', () => setActive(l));
   });
 
-  // scroll-spy: cari section yang paling “teratas namun sudah lewat”
+  // namun sudah lewat”
   let ticking = false;
   function onScroll() {
     if (ticking) return;
@@ -99,9 +97,8 @@ if (window.matchMedia) {
 
       for (const { a, sec } of items) {
         const top = sec.getBoundingClientRect().top - navH;
-        if (top <= 0) current = a; // terakhir yang lewat viewport top
+        if (top <= 0) current = a;
       }
-      // jika belum ada yang lewat, pilih link pertama
       setActive(current || links[0]);
       ticking = false;
     });
