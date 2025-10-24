@@ -46,7 +46,8 @@ footer {
   padding-top: 1.5rem;
   color: #eeeeee25 !important;
 }
-p {
+p,
+i {
   color: var(--text-main);
 }
 .container {
@@ -56,6 +57,7 @@ p {
   padding: 2rem 1.5rem;
 }
 
+/* Hero */
 .hero {
   text-align: center;
   margin: 16px 0;
@@ -79,6 +81,7 @@ p {
   object-fit: cover;
 }
 
+/* Profile */
 .profile {
   position: relative;
   display: flex;
@@ -99,6 +102,7 @@ p {
   display: block;
 }
 
+/* Theme Toggle */
 .theme-toogle {
   position: absolute;
   right: 0;
@@ -129,6 +133,7 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   color: #ff9b00;
 }
 
+/* Social */
 .social {
   display: flex;
   flex-direction: row;
@@ -145,6 +150,24 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   transition: transform 0.2s;
 }
 
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  background: var(--background-secondary);
+  border-radius: 1.5rem;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease,
+    border-radius 0.25s ease, transform 0.2s ease;
+}
+.navbar nav {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
 .navbar ul {
   list-style: none;
   display: flex;
@@ -156,8 +179,10 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   display: inline-block;
   text-decoration: none;
   color: var(--text-third);
-  padding: 1.5rem 0.5rem 0.3rem 0.5rem;
+  font-size: large;
   font-weight: 700;
+  padding: 1.5rem 0.5rem 0 0.5rem;
+  margin-bottom: 1rem;
   border-bottom: 2px solid transparent;
   transition: border-color 0.25s ease, color 0.25s ease;
 }
@@ -171,6 +196,7 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   border-bottom-color: var(--text-third);
 }
 
+/* Card */
 .card {
   background: var(--background-main);
   border-radius: 0.75rem;
@@ -192,6 +218,11 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   margin-bottom: 1rem;
   margin-top: 2rem;
 }
+.position {
+  color: var(--text-secc);
+  margin-top: -0.8rem;
+  margin-bottom: 0.7rem;
+}
 .column {
   display: flex;
   flex-direction: column;
@@ -203,6 +234,62 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   justify-content: space-between;
 }
 
-section#project {
+#education .card {
+  position: relative;
+  background: var(--background-main);
+  border-radius: 14px;
+  padding: 20px 16px 8px;
+}
+
+#education .timeline {
+  position: relative;
+  margin: 6px 0 4px;
+  padding-left: 2.5rem;
+}
+
+#education .timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--background-secondary);
+  border-radius: 2px;
+}
+
+/* ====== Item ====== */
+#education .timeline-item {
+  position: relative;
+  padding: 10px 0 16px;
+}
+
+/* Pentulan sejajar garis, tanpa glow */
+#education .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.8rem;
+  top: 1rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-secondary);
+}
+
+/* Tidak ada glow juga di dark */
+[theme='dark'] #education .timeline-item::before {
+  background: var(--background-secondary);
+  border-color: var(--background-secondary);
+}
+
+#skills .card span {
+  padding: 0.25rem 0.5rem;
+  color: var(--text-third);
+  background-color: var(--background-secondary);
+  border-radius: 1rem;
+}
+
+section#skills {
   margin-bottom: 2rem;
 }
