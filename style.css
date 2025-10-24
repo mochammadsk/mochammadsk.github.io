@@ -46,6 +46,7 @@ footer {
   padding-top: 1.5rem;
   color: #eeeeee25 !important;
 }
+a,
 p,
 i {
   color: var(--text-main);
@@ -158,7 +159,7 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   display: flex;
   align-items: center;
   background: var(--background-secondary);
-  border-radius: 1.5rem;
+  border-radius: 1.5rem 1.5rem 0 0;
   transition: background-color 0.25s ease, box-shadow 0.25s ease,
     border-radius 0.25s ease, transform 0.2s ease;
 }
@@ -203,13 +204,59 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   padding: 1.7rem;
   margin: 0 1.5rem;
 }
-.card h3 {
+.card a,
+h3 {
+  text-decoration: none;
+  font-size: larger;
+  font-weight: 700;
   color: var(--text-main);
   margin-bottom: 0.75rem;
 }
 .card:hover {
   transform: translateY(-0.2rem);
   transition: transform 0.2s;
+}
+
+/* Education */
+#education .card {
+  position: relative;
+  background: var(--background-main);
+  border-radius: 14px;
+  padding: 20px 16px 8px;
+}
+#education .timeline {
+  position: relative;
+  margin: 6px 0 4px;
+  padding-left: 2.5rem;
+}
+#education .timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--background-secondary);
+  border-radius: 2px;
+}
+#education .timeline-item {
+  position: relative;
+  padding: 10px 0 16px;
+}
+#education .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.8rem;
+  top: 1rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-secondary);
+}
+[theme='dark'] #education .timeline-item::before {
+  background: var(--background-secondary);
+  border-color: var(--background-secondary);
 }
 
 .title {
@@ -232,55 +279,6 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-#education .card {
-  position: relative;
-  background: var(--background-main);
-  border-radius: 14px;
-  padding: 20px 16px 8px;
-}
-
-#education .timeline {
-  position: relative;
-  margin: 6px 0 4px;
-  padding-left: 2.5rem;
-}
-
-#education .timeline::before {
-  content: '';
-  position: absolute;
-  left: 1rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--background-secondary);
-  border-radius: 2px;
-}
-
-/* ====== Item ====== */
-#education .timeline-item {
-  position: relative;
-  padding: 10px 0 16px;
-}
-
-/* Pentulan sejajar garis, tanpa glow */
-#education .timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -1.8rem;
-  top: 1rem;
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 50%;
-  background: var(--background-secondary);
-  border: 1px solid var(--background-secondary);
-}
-
-/* Tidak ada glow juga di dark */
-[theme='dark'] #education .timeline-item::before {
-  background: var(--background-secondary);
-  border-color: var(--background-secondary);
 }
 
 #skills .card span {
