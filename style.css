@@ -291,3 +291,67 @@ h3 {
 section#skills {
   margin-bottom: 2rem;
 }
+
+@media screen and (max-width: 800px) {
+  main {
+    margin: 0 0;
+    gap: 0;
+  }
+
+  /* Profile */
+  .profile {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  /* Theme Toggle */
+  .theme-toogle {
+    width: 50px;
+    height: 50px;
+  }
+  .theme-toogle i {
+    font-size: 24px;
+  }
+
+  /* Social */
+  .social i {
+    font-size: 2.25rem;
+  }
+
+  /* Navbar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    border-radius: 1.5rem 1.5rem 0 0;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease,
+      border-radius 0.25s ease, transform 0.2s ease;
+  }
+  .navbar nav {
+    padding: 0 5px;
+  }
+  .navbar ul {
+    gap: 0.5rem;
+  }
+  .navbar a {
+    font-size: medium;
+    font-weight: 700;
+    padding: 1.5rem 0.5rem 0 0.5rem;
+  }
+
+  /* Card */
+  .card {
+    padding: 1.25rem;
+    margin: 0 1.25rem;
+  }
+
+  #skills .card span {
+    padding: 0.25rem 0.5rem;
+  }
+
+  section#skills {
+    margin-bottom: 2rem;
+  }
+}
