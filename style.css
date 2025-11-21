@@ -40,7 +40,7 @@ header {
   justify-content: center;
   background: var(--background-secondary);
   transition: background-color 0.25s ease, box-shadow 0.25s ease,
-    border-radius 0.25s ease, transform 0.2s ease;
+    border-radius 0.25s ease, transform 0.3s ease;
 }
 main {
   display: grid;
@@ -54,9 +54,13 @@ footer {
   text-align: center;
   margin-top: 1.5rem;
 }
+h1 {
+  font-size: xx-large;
+}
 a,
 p,
 i {
+  font-size: medium;
   text-decoration: none;
   color: var(--text-main);
 }
@@ -91,6 +95,15 @@ h3 {
   flex-direction: row;
   justify-content: space-between;
 }
+.reveal {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.65s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: scale(1);
+}
 
 /* Hero */
 .hero {
@@ -99,12 +112,12 @@ h3 {
   padding: 1.75rem;
 }
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: xx-large;
   line-height: 1.2;
   color: var(--text-main);
 }
 .hero .position {
-  font-size: 1.25rem;
+  font-size: larger;
   color: var(--text-secc);
   margin: 0.75rem 0;
 }
@@ -146,7 +159,7 @@ h3 {
 }
 .theme-toogle i {
   position: absolute;
-  font-size: 20px;
+  font-size: x-large;
   opacity: 0;
   transition: opacity 0.15s;
 }
@@ -168,12 +181,12 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   margin-top: 1.5rem;
 }
 .social i {
-  font-size: 2rem;
+  font-size: xx-large;
   color: var(--text-secc);
 }
 .social a:hover {
-  transform: translateY(-0.2rem);
-  transition: transform 0.2s;
+  transform: scale(1.1);
+  transition: transform 0.3s;
 }
 
 /* Navbar */
@@ -194,8 +207,8 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
 }
 .nav-links a:hover {
   border-bottom-color: var(--text-third);
-  transform: translateY(-0.2rem);
-  transition: transform 0.2s;
+  transform: scale(0.95);
+  transition: transform 0.3s;
 }
 .nav-links a.active {
   border-bottom-color: var(--text-third);
@@ -214,8 +227,9 @@ h3 {
   margin-bottom: 0.75rem;
 }
 .card:hover {
-  transform: translateY(-0.2rem);
-  transition: transform 0.2s;
+  transform: scale(1.015);
+  transition: transform 0.3s;
+  overflow: hidden;
 }
 
 /* Education */
@@ -275,6 +289,9 @@ section#skills {
   main {
     padding: 0.75rem;
   }
+  .container {
+    padding: 1rem;
+  }
   .flex-group {
     display: flex;
     flex-direction: column;
@@ -289,12 +306,20 @@ section#skills {
     padding: 0.5rem 0 0.25rem;
   }
 
+  /* Card */
   .card {
     padding: 1.25rem;
   }
   .card a,
   h3 {
-    font-size: large;
+    font-size: larger;
     margin-bottom: 0;
+  }
+
+  #education .timeline {
+    padding-left: 2rem;
+  }
+  #education .timeline::before {
+    left: 0.5rem;
   }
 }
