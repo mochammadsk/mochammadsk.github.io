@@ -47,7 +47,6 @@ main {
   justify-content: center;
   margin: 1rem 0;
   padding: 0 1.5rem 1.5rem;
-  gap: 1rem;
   border-radius: 1.5rem;
   background: var(--background-secondary);
 }
@@ -75,8 +74,7 @@ h3 {
 .section-title {
   text-align: center;
   color: var(--text-third);
-  margin-bottom: 1rem;
-  margin-top: 2rem;
+  padding: 1.5rem 0;
 }
 .position {
   color: var(--text-secc);
@@ -274,10 +272,9 @@ section#skills {
 }
 
 @media screen and (max-width: 768px) {
-  header {
-    border-radius: 1.5rem;
+  main {
+    padding: 0.75rem;
   }
-
   .flex-group {
     display: flex;
     flex-direction: column;
@@ -289,12 +286,15 @@ section#skills {
     gap: 1rem;
   }
   .nav-links a {
-    padding: 1rem 0 0.25rem;
+    padding: 0.5rem 0 0.25rem;
   }
 
+  .card {
+    padding: 1.25rem;
+  }
   .card a,
   h3 {
-    font-size: larger;
+    font-size: large;
     margin-bottom: 0;
   }
 }
