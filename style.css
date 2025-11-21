@@ -32,6 +32,15 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease,
     border-color 0.5s ease;
 }
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  background: var(--background-secondary);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease,
+    border-radius 0.25s ease, transform 0.2s ease;
+}
 main {
   display: grid;
   justify-content: center;
@@ -40,10 +49,6 @@ main {
   gap: 1rem;
   border-radius: 1.5rem;
   background: var(--background-secondary);
-  overflow: hidden;
-}
-main > section {
-  padding: 0 1.5rem;
 }
 footer {
   text-align: center;
@@ -148,38 +153,28 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
 }
 
 /* Navbar */
-.navbar {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  background: var(--background-secondary);
-  border-radius: 1.5rem 1.5rem 0 0;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease,
-    border-radius 0.25s ease, transform 0.2s ease;
-}
 .nav-links {
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.3rem;
+  gap: 1.5rem;
 }
-.navbar a {
+.nav-links a {
   display: inline-block;
   color: var(--text-third);
-  font-size: 1rem;
   font-weight: 700;
   padding: 1.5rem 0 0.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border-bottom: 2px solid transparent;
   transition: border-color 0.25s ease, color 0.25s ease;
 }
-.navbar a:hover {
+.nav-links a:hover {
   border-bottom-color: var(--text-third);
   transform: translateY(-0.2rem);
   transition: transform 0.2s;
 }
-.navbar a.active {
+.nav-links a.active {
   border-bottom-color: var(--text-third);
 }
 
@@ -277,8 +272,15 @@ section#skills {
 }
 
 @media screen and (max-width: 768px) {
+  header {
+    border-radius: 1.5rem;
+  }
+
   /* Navbar */
   .nav-links {
     gap: 1rem;
+  }
+  .nav-links a {
+    padding: 1rem 0 0.25rem;
   }
 }

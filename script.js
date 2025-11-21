@@ -62,7 +62,7 @@ if (window.matchMedia) {
 
 // Scroll-spy for navbar active link
 (function () {
-  const nav = document.querySelector('.navbar');
+  const nav = document.querySelector('header');
   if (!nav) return;
 
   const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
@@ -87,7 +87,6 @@ if (window.matchMedia) {
     l.addEventListener('click', () => setActive(l));
   });
 
-  // namun sudah lewat”
   let ticking = false;
   function onScroll() {
     if (ticking) return;
