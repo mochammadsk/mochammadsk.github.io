@@ -242,12 +242,12 @@ h3 {
 #education .timeline {
   position: relative;
   margin: 6px 0 4px;
-  padding-left: 2.5rem;
+  padding-left: 2rem;
 }
 #education .timeline::before {
   content: '';
   position: absolute;
-  left: 1rem;
+  left: 0.5rem;
   top: 0;
   bottom: 0;
   width: 2px;
@@ -314,12 +314,5 @@ section#skills {
   h3 {
     font-size: larger;
     margin-bottom: 0;
-  }
-
-  #education .timeline {
-    padding-left: 2rem;
-  }
-  #education .timeline::before {
-    left: 0.5rem;
   }
 }
