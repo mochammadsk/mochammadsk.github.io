@@ -21,34 +21,38 @@
   margin: 0;
   padding: 0;
 }
-* {
-  transition: background-color 0.5s ease, color 0.5s ease,
-    border-color 0.5s ease;
-}
 html {
   scroll-behavior: smooth;
 }
 body {
   background-color: var(--background-main);
-  color: var(--ink);
+  color: var(--text-main);
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
+  transition: background-color 0.5s ease, color 0.5s ease,
+    border-color 0.5s ease;
 }
 main {
   display: grid;
+  justify-content: center;
   margin: 1rem 0;
+  padding: 0 1.5rem 1.5rem;
   gap: 1rem;
   border-radius: 1.5rem;
   background: var(--background-secondary);
+  overflow: hidden;
+}
+main > section {
+  padding: 0 1.5rem;
 }
 footer {
   text-align: center;
-  padding-top: 1.5rem;
-  color: #eeeeee25 !important;
+  margin-top: 1.5rem;
 }
 a,
 p,
 i {
+  text-decoration: none;
   color: var(--text-main);
 }
 .container {
@@ -61,8 +65,8 @@ i {
 /* Hero */
 .hero {
   text-align: center;
-  margin: 16px 0;
-  padding: 28px;
+  margin: 1rem 0;
+  padding: 1.75rem;
 }
 .hero h1 {
   font-size: 2.5rem;
@@ -79,7 +83,6 @@ i {
   width: 95%;
   height: 95%;
   border-radius: 50%;
-  object-fit: cover;
 }
 
 /* Profile */
@@ -88,19 +91,12 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 12rem;
-  height: 12rem;
+  width: 13.5rem;
+  height: 13.5rem;
   margin: 0 auto 1.5rem;
   border-radius: 50%;
   box-shadow: var(--shadow);
   border: 0.2rem solid var(--background-secondary);
-  overflow: visible;
-}
-.profile img {
-  width: 97%;
-  height: 97%;
-  object-fit: cover;
-  display: block;
 }
 
 /* Theme Toggle */
@@ -109,8 +105,8 @@ i {
   right: 0;
   bottom: 0;
   transform: translate(-25%, -25%);
-  width: 37px;
-  height: 37px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 0px solid var(--background-secondary);
   background: #fffff0;
@@ -153,23 +149,15 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
 
 /* Navbar */
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
   display: flex;
-  align-items: center;
+  width: 100%;
+  justify-content: center;
   background: var(--background-secondary);
   border-radius: 1.5rem 1.5rem 0 0;
   transition: background-color 0.25s ease, box-shadow 0.25s ease,
     border-radius 0.25s ease, transform 0.2s ease;
 }
-.navbar nav {
-  width: 100%;
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-.navbar ul {
+.nav-links {
   list-style: none;
   display: flex;
   align-items: center;
@@ -178,17 +166,15 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
 }
 .navbar a {
   display: inline-block;
-  text-decoration: none;
   color: var(--text-third);
-  font-size: large;
+  font-size: 1rem;
   font-weight: 700;
-  padding: 1.5rem 0.5rem 0 0.5rem;
+  padding: 1.5rem 0 0.25rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid transparent;
   transition: border-color 0.25s ease, color 0.25s ease;
 }
 .navbar a:hover {
-  background: transparent;
   border-bottom-color: var(--text-third);
   transform: translateY(-0.2rem);
   transition: transform 0.2s;
@@ -202,11 +188,9 @@ html:not([theme='dark']) .theme-toogle .fa-sun {
   background: var(--background-main);
   border-radius: 0.75rem;
   padding: 1.7rem;
-  margin: 0 1.5rem;
 }
 .card a,
 h3 {
-  text-decoration: none;
   font-size: larger;
   font-weight: 700;
   color: var(--text-main);
@@ -259,7 +243,7 @@ h3 {
   border-color: var(--background-secondary);
 }
 
-.title {
+.section-title {
   text-align: center;
   color: var(--text-third);
   margin-bottom: 1rem;
@@ -292,145 +276,9 @@ section#skills {
   margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 480px) {
-  main {
-    display: grid;
-    margin: 1rem 0;
-    gap: 0;
-    border-radius: 1.5rem;
-    background: var(--background-secondary);
-  }
-  footer {
-    text-align: center;
-    padding-top: 1.5rem;
-    color: #eeeeee25 !important;
-  }
-  a,
-  p,
-  i {
-    color: var(--text-main);
-  }
-  .container {
-    width: 100%;
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 1.5rem 1rem;
-  }
-
-  /* Hero */
-  .hero {
-    margin: 0 0;
-    padding: 24px;
-  }
-  .hero h1 {
-    font-size: 2.25rem;
-  }
-
-  /* Profile */
-  .profile {
-    width: 14rem;
-    height: 14rem;
-  }
-
-  /* Theme Toggle */
-  .theme-toogle {
-    width: 45px;
-    height: 45px;
-  }
-  .theme-toogle i {
-    font-size: 24px;
-  }
-
-  /* Social */
-  .social i {
-    font-size: 2.25rem;
-  }
-
+@media screen and (max-width: 768px) {
   /* Navbar */
-  .navbar nav {
-    padding: 8px 10px;
-  }
-  .navbar ul {
-    gap: 0;
-    justify-content: space-between;
-  }
-  .navbar a {
-    font-size: large;
-    padding: 1.5rem 0rem 0 0rem;
-  }
-
-  /* Card */
-  .card {
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    margin: 0 1rem;
-  }
-  .card a,
-  h3 {
-    text-decoration: none;
-    font-size: larger;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 0.75rem;
-  }
-
-  /* Education */
-  #education .card {
-    position: relative;
-    background: var(--background-main);
-    border-radius: 14px;
-    padding: 20px 16px 8px;
-  }
-  #education .timeline {
-    position: relative;
-    margin: 6px 0 4px;
-    padding-left: 2.5rem;
-  }
-  #education .timeline::before {
-    content: '';
-    position: absolute;
-    left: 1rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--background-secondary);
-    border-radius: 2px;
-  }
-  #education .timeline-item {
-    position: relative;
-    padding: 10px 0 16px;
-  }
-  #education .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -1.8rem;
-    top: 1rem;
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background: var(--background-secondary);
-    border: 1px solid var(--background-secondary);
-  }
-
-  .title {
-    text-align: center;
-    color: var(--text-third);
-    margin-bottom: 1rem;
-    margin-top: 2rem;
-  }
-  .position {
-    color: var(--text-secc);
-    margin-top: -0.8rem;
-    margin-bottom: 0.7rem;
-  }
-  .column {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  .nav-links {
+    gap: 1rem;
   }
 }
