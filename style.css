@@ -297,7 +297,7 @@ section#skills {
     font-size: small;
   }
   .container {
-    padding: 1rem;
+    padding: 0.75rem;
   }
   .flex-group {
     display: flex;
