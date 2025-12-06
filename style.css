@@ -224,11 +224,6 @@ h3 {
   color: var(--text-main);
   margin-bottom: 0.75rem;
 }
-.card:hover {
-  transform: scale(1.015);
-  transition: transform 0.3s;
-  overflow: hidden;
-}
 
 /* Education */
 #education .card {
