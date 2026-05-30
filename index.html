@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mochammad Syahrul Kurniawan</title>
     <link href="/assets/images/logo.png" rel="icon" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <!-- Fonts -->
@@ -27,172 +35,74 @@
 
   <body>
     <div class="container">
-      <!-- Profile -->
-      <section class="hero reveal">
-        <div class="profile">
-          <img src="/assets/images/profile.jpg" alt="profile-picture" />
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+          <img
+            id="site-logo"
+            src="/assets/images/logo-dark.svg"
+            alt="Logo"
+            class="rounded-circle navbar-logo"
+          />
 
+          <!-- Mobile -->
           <button
-            class="theme-toogle"
-            aria-label="Toggle Theme"
-            section-title="Toggle Theme"
+            class="navbar-toggler border-0 shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
           >
-            <i class="fa-solid fa-moon"></i>
-            <i class="fa-solid fa-sun"></i>
+            <span class="navbar-toggler-icon"></span>
           </button>
-        </div>
-        <h1>Mochammad Syahrul Kurniawan</h1>
-        <p class="position">Web Developer</p>
-        <p>
-          I have experience as a web developer to design and implement APIs,
-          also optimize SQL or no SQL database architectures. I'm actively
-          exploring and refining my skills in Web Development.
-        </p>
-        <div class="social">
-          <a href="https://github.com/mochammadsk/" target="_blank">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/mochammadsk/" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="mailto:mochrul.kurniawan@gmail.com" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </section>
 
-      <main>
-        <!-- Navbar -->
-        <header>
-          <nav>
-            <ul class="nav-links">
-              <li><a href="#experience">Experience</a></li>
-              <li><a href="#education">Education</a></li>
-              <li><a href="#project">Project</a></li>
-              <li><a href="#skills">Skills</a></li>
+          <!-- Menu -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto gap-lg-2">
+              <li class="nav-item">
+                <a class="nav-link active" href="#about">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#experience">Experience</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#education">Education</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
             </ul>
-          </nav>
-        </header>
 
-        <!-- Experience -->
-        <section id="experience">
-          <div class="section-title reveal">
-            <h1>Experience</h1>
+            <!-- Theme -->
+            <button
+              id="theme-toggle"
+              class="btn btn-outline-secondary rounded-circle"
+              data-bs-toggle="tooltip"
+              data-bs-title="Toggle Theme"
+              aria-label="Toggle Theme"
+            >
+              <i id="theme-icon"></i>
+            </button>
           </div>
-          <div class="column">
-            <div class="card reveal">
-              <div class="flex-group">
-                <a href="https://duniateknologinusantara.com/" target="_blank"
-                  >PT. Dunia Tekonologi Nusantara</a
-                >
-                <p>July 2025 - Present</p>
-              </div>
-              <p class="position">Full Stack Developer | Denpasar, Bali</p>
-              <p>
-                Developing an end-to-end accounting system includes database,
-                backend, and frontend.
-              </p>
-            </div>
-
-            <div class="card reveal">
-              <div class="flex-group">
-                <a href="https://nunwayo.com/home/" target="_blank">NunWaYo</a>
-                <p>February 2025 - Present</p>
-              </div>
-              <p class="position">Backend Developer | Jakarta</p>
-              <p>
-                I'm responsible for developing and maintaining APIs across
-                multiple modules, including customer applications, employee
-                applications, cashier application, and core systems. I also
-                create API documentation using Swagger and collaborate with the
-                team to build and improve websites using Express.js. In addition
-                to development, I'm responsible for monitoring and maintaining
-                the server for smooth web performance.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Education -->
-        <section id="education">
-          <div class="section-title reveal">
-            <h1>Education</h1>
-          </div>
-          <div class="card reveal">
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="flex-group">
-                  <a href="https://undiksha.ac.id/" target="_blank"
-                    >Universitas Pendidikan Ganesha</a
-                  >
-                  <p>August 2021 - Present</p>
-                </div>
-                <p class="position">Information System</p>
-              </div>
-
-              <div class="timeline-item">
-                <div class="flex-group">
-                  <a
-                    href="https://program.productzillaacademy.com/"
-                    target="_blank"
-                    >Productzilla Academy</a
-                  >
-                  <p>September 2024 - December 2024</p>
-                </div>
-                <p class="position">Full Stack Developer</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Project -->
-        <!-- <section id="project">
-          <div class="section-title reveal">
-            <h1>Project</h1>
-          </div>
-          <div class="flex-group">
-            <div class="card reveal">
-              <h3>StayHub</h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Corporis excepturi ipsum molestias quasi iure quos odio sunt in,
-                beatae quod quia, omnis dolorem quas inventore hic.
-                Exercitationem aperiam neque dolor?
-              </p>
-            </div>
-            <div class="card reveal">
-              <h3>Spendee</h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Corporis excepturi ipsum molestias quasi iure quos odio sunt in,
-                beatae quod quia, omnis dolorem quas inventore hic.
-                Exercitationem aperiam neque dolor?
-              </p>
-            </div>
-          </div>
-        </section> -->
-
-        <!-- Skills -->
-        <section id="skills">
-          <div class="section-title reveal">
-            <h1>Skills</h1>
-          </div>
-          <div class="card reveal">
-            <img src="/assets/icons/NodeJS-Light.svg" alt="nodejs" />
-            <img src="/assets/icons/ExpressJS-Light.svg" alt="expressjs" />
-          </div>
-        </section>
-      </main>
-
-      <footer class="reveal">
-        <p>
-          Developed by Mochammad Syahrul Kurniawan <br />
-          &copy;
-          <span id="year">2025</span>
-        </p>
-      </footer>
+        </div>
+      </nav>
     </div>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>
