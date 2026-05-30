@@ -1,5 +1,8 @@
-const html = document.documentElement;
+// AOS
+AOS.init();
 
+// Theme
+const html = document.documentElement;
 const themeButton = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 

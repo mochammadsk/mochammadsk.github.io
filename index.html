@@ -28,18 +28,27 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body>
     <div class="container">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg sticky-top bg-body border-bottom">
+      <nav
+        class="navbar navbar-expand-lg sticky-top bg-body border-bottom"
+        data-aos="fade-down"
+        data-aos-duration="1500"
+      >
         <div class="container">
           <img
             id="site-logo"
             src="/assets/images/logo-dark.svg"
             alt="Logo"
             class="img-logo rounded-circle"
+            data-aos="fade-right"
+            data-aos-duration="1500"
           />
 
           <!-- Humberger Button -->
@@ -86,6 +95,8 @@
               class="btn btn-outline-secondary rounded-circle"
               data-bs-toggle="tooltip"
               data-bs-title="Toggle Theme"
+              data-aos="fade-left"
+              data-aos-duration="1500"
             >
               <i id="theme-icon"></i>
             </button>
@@ -102,6 +113,8 @@
         >
           <div
             class="d-flex flex-column flex-md-row gap-4 align-items-center justify-content-center"
+            data-aos="zoom-in"
+            data-aos-duration="1500"
           >
             <img
               src="/assets/images/profile.jpg"
@@ -130,23 +143,27 @@
           </div>
 
           <div class="row text-center py-4 g-3">
-            <div class="col-4">
+            <div class="col-4" data-aos="flip-left" data-aos-duration="1500">
               <h3 class="fw-bold mb-0">2+</h3>
               <small class="text-body-secondary">Years Experience</small>
             </div>
 
-            <div class="col-4 border-start border-end">
+            <div
+              class="col-4 border-start border-end"
+              data-aos="flip-left"
+              data-aos-duration="1500"
+            >
               <h3 class="fw-bold mb-0">20+</h3>
               <small class="text-body-secondary">Projects</small>
             </div>
 
-            <div class="col-4">
+            <div class="col-4" data-aos="flip-left" data-aos-duration="1500">
               <h3 class="fw-bold mb-0">10+</h3>
               <small class="text-body-secondary">Technologies</small>
             </div>
           </div>
 
-          <div class="row justify-content-center">
+          <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="1500">
             <div class="col-lg-8">
               <span class="lead text-body-secondary">
                 Web Developer with a strong foundation in Information Systems and 2+ years of remote
@@ -159,15 +176,30 @@
           </div>
 
           <div class="d-flex justify-content-center gap-3 social-links">
-            <a href="https://www.linkedin.com/in/mochammadsk/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/mochammadsk/"
+              target="_blank"
+              data-aos="fade-up-right"
+              data-aos-duration="1500"
+            >
               <i class="bi bi-linkedin fs-1" data-bs-toggle="tooltip" data-bs-title="LinkedIn"></i>
             </a>
 
-            <a href="https://github.com/mochammadsk/" target="_blank">
+            <a
+              href="https://github.com/mochammadsk/"
+              target="_blank"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+            >
               <i class="bi bi-github fs-1" data-bs-toggle="tooltip" data-bs-title="GitHub"></i>
             </a>
 
-            <a href="mailto:mochrul.kurniawan@gmail.com" target="_blank">
+            <a
+              href="mailto:mochrul.kurniawan@gmail.com"
+              target="_blank"
+              data-aos="fade-up-left"
+              data-aos-duration="1500"
+            >
               <i
                 class="bi bi-envelope-fill fs-1"
                 data-bs-toggle="tooltip"
@@ -222,6 +254,7 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
