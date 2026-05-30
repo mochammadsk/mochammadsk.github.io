@@ -1,19 +1,65 @@
 :root {
   --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-line-height: 1.7;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-.navbar-logo {
+h1,
+nav {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.img-logo {
   width: 70px;
   height: 70px;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.img-profile {
+  width: 250px;
+  height: 250px;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.social-links a {
+  color: var(--bs-secondary-color);
+  display: inline-flex;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+
+.social-links .bi-linkedin:hover {
+  color: #0866c2;
+}
+
+.social-links .bi-github:hover {
+  color: #010000;
+}
+
+.social-links .bi-envelope-fill:hover {
+  color: #eb4334;
 }
 
 @media (min-width: 768px) {
-  .navbar-logo {
+  .img-logo {
     width: 95px;
     height: 95px;
+  }
+
+  .img-profile {
+    width: 300px;
+    height: 300px;
   }
 }

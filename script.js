@@ -23,13 +23,40 @@ function setTheme(theme) {
   html.setAttribute('data-bs-theme', theme);
 
   if (theme === 'dark') {
-    themeIcon.className = 'fa-solid fa-sun';
+    themeIcon.className = 'bi bi-brightness-high-fill';
     logo.src = '/assets/images/logo-dark.svg';
   } else {
-    themeIcon.className = 'fa-solid fa-moon';
+    themeIcon.className = 'bi bi-moon-stars-fill';
     logo.src = '/assets/images/logo-light.svg';
   }
 }
+
+// Navbar
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navLinks.forEach((link) => {
+          link.classList.remove('active');
+
+          if (link.getAttribute('href') === `#${entry.target.id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+sections.forEach((section) => {
+  observer.observe(section);
+});
 
 // Tooltip
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
