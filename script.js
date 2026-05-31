@@ -1,9 +1,4 @@
 // AOS Animation
-AOS.init({
-  duration: 1000,
-  offset: 50,
-});
-
 const isMobile = window.innerWidth < 768;
 document.querySelectorAll('[data-aos]').forEach((el) => {
   if (isMobile) {
@@ -13,6 +8,11 @@ document.querySelectorAll('[data-aos]').forEach((el) => {
       el.dataset.aos = 'fade-up';
     }
   }
+});
+
+AOS.init({
+  duration: 1000,
+  offset: 50,
 });
 
 // Tooltip
