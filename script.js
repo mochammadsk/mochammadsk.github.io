@@ -3,7 +3,7 @@ AOS.init({
   duration: 1000,
 });
 
-const isMobile = window.innerWidth < 768;
+const isMobile = window.innerWidth < 768 || window.innerWidth < 992;
 document.querySelectorAll('[data-aos]').forEach((el) => {
   if (isMobile) {
     const aos = el.dataset.aos;
