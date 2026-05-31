@@ -3,6 +3,17 @@ AOS.init({
   duration: 1000,
 });
 
+const isMobile = window.innerWidth < 768;
+document.querySelectorAll('[data-aos]').forEach((el) => {
+  if (isMobile) {
+    const aos = el.dataset.aos;
+
+    if (aos === 'fade-left' || aos === 'fade-right') {
+      el.dataset.aos = 'fade-up';
+    }
+  }
+});
+
 // Tooltip
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map(
