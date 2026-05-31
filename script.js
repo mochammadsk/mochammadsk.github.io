@@ -11,6 +11,8 @@ document.querySelectorAll('[data-aos]').forEach((el) => {
 
     if (aos === 'fade-left' || aos === 'fade-right') {
       el.dataset.aos = 'fade-up';
+    } else if (aos === 'zoom-in') {
+      el.dataset.aos = 'fade-down';
     }
   }
 });
