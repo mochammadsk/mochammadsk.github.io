@@ -13,6 +13,7 @@ document.querySelectorAll('[data-aos]').forEach((el) => {
 AOS.init({
   duration: 1000,
   offset: 50,
+  disable: true,
 });
 
 // Tooltip
