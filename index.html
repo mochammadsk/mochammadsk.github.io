@@ -34,502 +34,512 @@
   </head>
 
   <body>
-    <div class="container">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg sticky-top bg-body border-bottom">
-        <div class="container">
-          <img
-            id="site-logo"
-            src="/assets/images/logo-dark.svg"
-            alt="Logo"
-            class="img-logo rounded-circle"
-          />
+    <!-- <div class="container"> -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body border-bottom">
+      <div class="container">
+        <img id="img-logo" src="/assets/images/logo-dark.svg" alt="Logo" class="rounded-circle" />
 
-          <!-- Humberger Button -->
+        <!-- Humberger Button -->
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav nav-underline mx-auto gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+          </ul>
+
+          <!-- Theme Toggle -->
           <button
-            class="navbar-toggler border-0 shadow-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
+            id="theme-toggle"
+            class="btn btn-outline-secondary rounded-circle"
+            data-bs-toggle="tooltip"
+            data-bs-title="Toggle Theme"
           >
-            <span class="navbar-toggler-icon"></span>
+            <i id="theme-icon"></i>
           </button>
-
-          <!-- Menu -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav nav-underline mx-auto gap-lg-2">
-              <li class="nav-item">
-                <a class="nav-link active" href="#about">About</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#experience">Experience</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#projects">Projects</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#skills">Skills</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#education">Education</a>
-              </li>
-            </ul>
-
-            <!-- Theme Toggle -->
-            <button
-              id="theme-toggle"
-              class="btn btn-outline-secondary rounded-circle"
-              data-bs-toggle="tooltip"
-              data-bs-title="Toggle Theme"
-            >
-              <i id="theme-icon"></i>
-            </button>
-          </div>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-      <!-- Main Content -->
-      <main class="pt-3">
-        <div class="container">
-          <!-- About -->
-          <section
-            id="about"
-            class="d-flex flex-column gap-2 py-3 justify-content-center text-center border-bottom border-body"
+    <!-- Main Content -->
+    <main class="pt-3">
+      <div class="container">
+        <!-- About -->
+        <section
+          id="about"
+          class="d-flex flex-column gap-2 py-3 justify-content-center text-center border-bottom border-body"
+        >
+          <div
+            class="d-flex flex-column flex-md-row gap-4 align-items-center justify-content-center"
+            data-aos="zoom-in"
           >
-            <div
-              class="d-flex flex-column flex-md-row gap-4 align-items-center justify-content-center"
-              data-aos="zoom-in"
-            >
-              <img
-                src="/assets/images/profile.jpg"
-                alt="Profile Picture"
-                class="img-profile rounded-circle border border-3 border-body p-2"
-              />
-              <div class="d-flex flex-column justify-content-start text-center text-md-start">
-                <h1 class="display-6 fw-semibold">
-                  Mochammad Syahrul Kurniawan
-                  <i
-                    class="bi bi-patch-check-fill text-primary fs-4 align-middle"
-                    data-bs-toggle="tooltip"
-                    data-bs-title="Verified Developer"
-                  ></i>
-                </h1>
-                <div class="lh-1">
-                  <h2 class="fs-5 text-body-secondary fw-normal">Web Developer</h2>
-                  <p class="text-body-secondary mb-2">
-                    <i class="bi bi-geo-alt-fill"></i>
-                    Singaraja, Bali, Indonesia
-                  </p>
-                  <p class="badge rounded-pill text-bg-success">Open to Opportunities</p>
-                </div>
-              </div>
-            </div>
-            <div class="row text-center py-4 g-3">
-              <div class="col-4" data-aos="flip-left">
-                <h3 class="fw-bold mb-0">2+</h3>
-                <small class="text-body-secondary">Years Experience</small>
-              </div>
-              <div class="col-4 border-start border-end" data-aos="flip-left">
-                <h3 class="fw-bold mb-0">20+</h3>
-                <small class="text-body-secondary">Projects</small>
-              </div>
-              <div class="col-4" data-aos="flip-left">
-                <h3 class="fw-bold mb-0">10+</h3>
-                <small class="text-body-secondary">Technologies</small>
-              </div>
-            </div>
-            <div class="row justify-content-center" data-aos="fade-up">
-              <div class="col-lg-8">
-                <span class="lead text-body-secondary">
-                  Web Developer with a strong foundation in Information Systems and 2+ years of
-                  remote development experience. I build dynamic, responsive front-end experiences
-                  using React and PWAs, seamlessly integrated with robust, scalable back-end
-                  architectures powered by Laravel, Express.js, and MySQL. Passionate about clean
-                  code, API development, and cybersecurity.
-                </span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-center gap-3 social-links">
-              <a
-                href="https://www.linkedin.com/in/mochammadsk/"
-                target="_blank"
-                data-aos="fade-up-right"
-              >
+            <img
+              id="img-profile"
+              src="/assets/images/profile.jpg"
+              alt="Profile Picture"
+              class="rounded-circle border border-3 border-body p-2"
+            />
+            <div class="d-flex flex-column justify-content-start text-center text-md-start">
+              <h1 class="display-6 fw-semibold">
+                Mochammad Syahrul Kurniawan
                 <i
-                  class="bi bi-linkedin fs-1"
+                  class="bi bi-patch-check-fill text-primary fs-4 align-middle"
                   data-bs-toggle="tooltip"
-                  data-bs-title="LinkedIn"
+                  data-bs-title="Verified Developer"
                 ></i>
-              </a>
-              <a href="https://github.com/mochammadsk/" target="_blank" data-aos="fade-up">
-                <i class="bi bi-github fs-1" data-bs-toggle="tooltip" data-bs-title="GitHub"></i>
-              </a>
-              <a href="mailto:mochrul.kurniawan@gmail.com" target="_blank" data-aos="fade-up-left">
-                <i
-                  class="bi bi-envelope-fill fs-1"
-                  data-bs-toggle="tooltip"
-                  data-bs-title="Email"
-                ></i>
-              </a>
+              </h1>
+              <div class="lh-1">
+                <h2 class="fs-5 text-body-secondary fw-normal">Web Developer</h2>
+                <p class="text-body-secondary mb-2">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  Singaraja, Bali, Indonesia
+                </p>
+                <p class="badge rounded-pill text-bg-success">Open to Opportunities</p>
+              </div>
             </div>
+          </div>
+          <div class="row text-center py-4 g-3">
+            <div class="col-4" data-aos="flip-left">
+              <h3 class="fw-bold mb-0">2+</h3>
+              <small class="text-body-secondary">Years Experience</small>
+            </div>
+            <div class="col-4 border-start border-end" data-aos="flip-left">
+              <h3 class="fw-bold mb-0">20+</h3>
+              <small class="text-body-secondary">Projects</small>
+            </div>
+            <div class="col-4" data-aos="flip-left">
+              <h3 class="fw-bold mb-0">10+</h3>
+              <small class="text-body-secondary">Technologies</small>
+            </div>
+          </div>
+          <div class="row justify-content-center" data-aos="fade-up">
+            <div class="col-lg-8">
+              <span class="lead text-body-secondary">
+                Web Developer with a strong foundation in Information Systems and 2+ years of remote
+                development experience. I build dynamic, responsive front-end experiences using
+                React and PWAs, seamlessly integrated with robust, scalable back-end architectures
+                powered by Laravel, Express.js, and MySQL. Passionate about clean code, API
+                development, and cybersecurity.
+              </span>
+            </div>
+          </div>
+          <div id="social-links" class="d-flex justify-content-center gap-3">
             <a
-              href="https://docs.google.com/document/d/1EXNXX-vQPqzjokfe7qTJm8_cPYz-oKFM/view"
+              href="https://www.linkedin.com/in/mochammadsk/"
               target="_blank"
-              class="text-decoration-none fw-light"
-              data-aos="fade-up"
+              data-aos="fade-up-right"
             >
-              <i class="bi bi-file-earmark-text"></i>
-              View Resume
+              <i class="bi bi-linkedin fs-1" data-bs-toggle="tooltip" data-bs-title="LinkedIn"></i>
             </a>
-          </section>
-          <!-- Experience -->
-          <section id="experience" class="py-5 border-bottom border-body">
-            <div class="text-center mb-5" data-aos="zoom-in">
-              <h1 class="display-6 fw-semibold">Experience</h1>
-              <hr class="w-25 mx-auto" />
-            </div>
-            <div class="row justify-content-center gap-4">
-              <!-- Dunia Teknologi Nusantara -->
-              <div class="col-lg-9" data-aos="fade-right">
-                <div class="card border shadow-sm">
-                  <div class="card-body p-4">
-                    <div class="mb-3">
-                      <div
-                        class="d-flex flex-column flex-md-row justify-content-between align-items-md-start"
-                      >
-                        <div>
-                          <a
-                            href="https://duniateknologinusantara.com/"
-                            target="_blank"
-                            class="fw-semibold fs-5 text-decoration-none"
-                          >
-                            PT. Dunia Teknologi Nusantara
-                            <i class="bi bi-box-arrow-up-right small"></i>
-                          </a>
-                          <h5 class="fs-6 fw-normal mt-2 mb-1">Full Stack Developer</h5>
-                        </div>
-                        <div
-                          class="text-body-secondary small mt-1 mt-md-0 text-md-end flex-shrink-0"
+            <a href="https://github.com/mochammadsk/" target="_blank" data-aos="fade-up">
+              <i class="bi bi-github fs-1" data-bs-toggle="tooltip" data-bs-title="GitHub"></i>
+            </a>
+            <a href="mailto:mochrul.kurniawan@gmail.com" target="_blank" data-aos="fade-up-left">
+              <i
+                class="bi bi-envelope-fill fs-1"
+                data-bs-toggle="tooltip"
+                data-bs-title="Email"
+              ></i>
+            </a>
+          </div>
+          <a
+            href="https://docs.google.com/document/d/1EXNXX-vQPqzjokfe7qTJm8_cPYz-oKFM/view"
+            target="_blank"
+            class="text-decoration-none fw-light"
+            data-aos="fade-up"
+          >
+            <i class="bi bi-file-earmark-text"></i>
+            View Resume
+          </a>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="py-5 border-bottom border-body">
+          <div class="text-center mb-5" data-aos="zoom-in">
+            <h1 class="display-6 fw-semibold">Experience</h1>
+            <hr class="w-25 mx-auto" />
+          </div>
+
+          <div class="row justify-content-center gap-4">
+            <!-- Dunia Teknologi Nusantara -->
+            <div class="col-lg-9" data-aos="fade-right">
+              <div class="card border shadow-sm">
+                <div class="card-body p-4">
+                  <div class="mb-3">
+                    <div
+                      class="d-flex flex-column flex-md-row justify-content-between align-items-md-start"
+                    >
+                      <div>
+                        <a
+                          href="https://duniateknologinusantara.com/"
+                          target="_blank"
+                          class="fw-semibold fs-5 text-decoration-none"
                         >
-                          <span class="employment-duration" data-start="2025-07"></span>
-                        </div>
+                          PT. Dunia Teknologi Nusantara
+                          <i class="bi bi-box-arrow-up-right small"></i>
+                        </a>
+                        <h5 class="fs-6 fw-normal mt-2 mb-1">Full Stack Developer</h5>
                       </div>
-                      <div class="d-flex flex-wrap gap-3 text-body-secondary small">
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-briefcase-fill"></i>
-                          Full Time
-                        </span>
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-geo-alt-fill"></i>
-                          Denpasar, Bali
-                        </span>
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-laptop"></i>
-                          Remote
-                        </span>
+                      <div class="text-body-secondary small mt-1 mt-md-0 text-md-end flex-shrink-0">
+                        <span class="employment-duration" data-start="2025-07"></span>
                       </div>
                     </div>
-                    <ul class="mb-4">
-                      <li>
-                        Engineered a web-based accounting system using Laravel, React.js, and
-                        Inertia.js to streamline financial operations.
-                      </li>
-                      <li>
-                        Designed scalable database architectures capable of handling high-volume
-                        accounting transactions while maintaining data integrity.
-                      </li>
-                      <li>
-                        Developed responsive and interactive user interfaces from UI/UX designs
-                        within the Inertia ecosystem.
-                      </li>
-                    </ul>
-                    <div class="d-flex flex-wrap gap-2">
-                      <span class="badge border text-body">Laravel</span>
-                      <span class="badge border text-body">React.js</span>
-                      <span class="badge border text-body">Inertia.js</span>
-                      <span class="badge border text-body">MySQL</span>
+                    <div class="d-flex flex-wrap gap-3 text-body-secondary small">
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-briefcase-fill"></i>
+                        Full Time
+                      </span>
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        Denpasar, Bali
+                      </span>
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-laptop"></i>
+                        Remote
+                      </span>
                     </div>
                   </div>
-                </div>
-              </div>
-              <!-- NunWaYo -->
-              <div class="col-lg-9" data-aos="fade-left">
-                <div class="card border shadow-sm">
-                  <div class="card-body p-4">
-                    <div class="mb-3">
-                      <div
-                        class="d-flex flex-column flex-md-row justify-content-between align-items-md-start"
-                      >
-                        <div>
-                          <a
-                            href="https://nunwayo.com/home/"
-                            target="_blank"
-                            class="fw-semibold fs-5 text-decoration-none"
-                          >
-                            NunWaYo
-                            <i class="bi bi-box-arrow-up-right small"></i>
-                          </a>
-                          <h5 class="fs-6 fw-normal mt-2 mb-1">Back End Developer</h5>
-                        </div>
-                        <div
-                          class="text-body-secondary small mt-1 mt-md-0 text-md-end flex-shrink-0"
-                        >
-                          <span
-                            class="employment-duration"
-                            data-start="2025-02"
-                            data-end="2025-10"
-                          ></span>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-wrap gap-3 text-body-secondary small">
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-briefcase-fill"></i>
-                          Freelance
-                        </span>
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-geo-alt-fill"></i>
-                          Bendungan Hilir, Jakarta
-                        </span>
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-laptop"></i>
-                          Remote
-                        </span>
-                      </div>
-                    </div>
-                    <ul class="mb-4">
-                      <li>
-                        Engineered and maintained robust APIs for Point-of-Sale (POS) systems and
-                        customer-facing applications.
-                      </li>
-                      <li>
-                        Integrated the Biteship API to automate real-time shipping rate calculations
-                        and streamline logistics management for customer orders.
-                      </li>
-                      <li>
-                        Authored and maintained comprehensive API documentation using Swagger,
-                        enhancing cross-functional team collaboration and future system scalability.
-                      </li>
-                      <li>
-                        Monitored server health and optimized backend performance to ensure high
-                        availability and application stability.
-                      </li>
-                    </ul>
-                    <div class="d-flex flex-wrap gap-2">
-                      <span class="badge border text-body">Node.js</span>
-                      <span class="badge border text-body">Express.js</span>
-                      <span class="badge border text-body">Swagger</span>
-                      <span class="badge border text-body">MySQL</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Productzilla Academy -->
-              <div class="col-lg-9" data-aos="fade-right">
-                <div class="card border shadow-sm">
-                  <div class="card-body p-4">
-                    <div class="mb-3">
-                      <div
-                        class="d-flex flex-column flex-md-row justify-content-between align-items-md-start"
-                      >
-                        <div>
-                          <a
-                            href="https://www.productzillaacademy.com/"
-                            target="_blank"
-                            class="fw-semibold fs-5 text-decoration-none"
-                          >
-                            Productzilla Academy
-                            <i class="bi bi-box-arrow-up-right small"></i>
-                          </a>
-                          <h5 class="fs-6 fw-normal mt-2 mb-1">Full Stack Developer</h5>
-                        </div>
-                        <div
-                          class="text-body-secondary small mt-1 mt-md-0 text-md-end flex-shrink-0"
-                        >
-                          <span
-                            class="employment-duration"
-                            data-start="2024-08"
-                            data-end="2024-12"
-                          ></span>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-wrap gap-3 text-body-secondary small">
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-briefcase-fill"></i>
-                          Internship
-                        </span>
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-geo-alt-fill"></i>
-                          Bandung, Jawa Barat
-                        </span>
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-laptop"></i>
-                          Remote
-                        </span>
-                      </div>
-                    </div>
-                    <ul class="mb-4">
-                      <li>
-                        Developed a boarding house management system utilizing the MERN stack.
-                      </li>
-                      <li>Integrated Midtrans payment gateway for online payment processing.</li>
-                      <li>Implemented unit and integration testing using Jest.</li>
-                      <li>Created and maintained API documentation using Swagger.</li>
-                      <li>Established CI/CD pipelines with GitHub Actions.</li>
-                      <li>Deployed and managed applications on Vercel.</li>
-                    </ul>
-                    <div class="d-flex flex-wrap gap-2">
-                      <span class="badge border text-body">Node.js</span>
-                      <span class="badge border text-body">React.js</span>
-                      <span class="badge border text-body">Swagger</span>
-                      <span class="badge border text-body">MongoDB</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Ganesha Inovasi Teknologi -->
-              <div class="col-lg-9" data-aos="fade-left">
-                <div class="card border shadow-sm">
-                  <div class="card-body p-4">
-                    <div class="mb-3">
-                      <div
-                        class="d-flex flex-column flex-md-row justify-content-between align-items-md-start"
-                      >
-                        <div>
-                          <a
-                            href="https://git-id.com/"
-                            target="_blank"
-                            class="fw-semibold fs-5 text-decoration-none"
-                          >
-                            Ganesha Inovasi Teknologi
-                            <i class="bi bi-box-arrow-up-right small"></i>
-                          </a>
-                          <h5 class="fs-6 fw-normal mt-2 mb-1">Back End Developer</h5>
-                        </div>
-                        <div
-                          class="text-body-secondary small mt-1 mt-md-0 text-md-end flex-shrink-0"
-                        >
-                          <span
-                            class="employment-duration"
-                            data-start="2024-02"
-                            data-end="2024-07"
-                          ></span>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-wrap gap-3 text-body-secondary small">
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-briefcase-fill"></i>
-                          Internship
-                        </span>
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-geo-alt-fill"></i>
-                          Denpasar, Bali
-                        </span>
-                        <span class="d-flex align-items-center gap-1">
-                          <i class="bi bi-laptop"></i>
-                          Work From Anywhere
-                        </span>
-                      </div>
-                    </div>
-                    <ul class="mb-4">
-                      <li>
-                        Developed scalable and high-performance APIs using Node.js and MongoDB to
-                        support core web application functionalities.
-                      </li>
-                      <li>
-                        Implemented a secure authentication system by integrating Google OAuth.
-                      </li>
-                      <li>
-                        Designed and deployed RESTful APIs while implementing strict data encryption
-                        protocols to ensure user security.
-                      </li>
-                    </ul>
-                    <div class="d-flex flex-wrap gap-2">
-                      <span class="badge border text-body">Node.js</span>
-                      <span class="badge border text-body">Express.js</span>
-                      <span class="badge border text-body">Swagger</span>
-                      <span class="badge border text-body">MySQL</span>
-                    </div>
+                  <ul class="mb-4">
+                    <li>
+                      Engineered a web-based accounting system using Laravel, React.js, and
+                      Inertia.js to streamline financial operations.
+                    </li>
+                    <li>
+                      Designed scalable database architectures capable of handling high-volume
+                      accounting transactions while maintaining data integrity.
+                    </li>
+                    <li>
+                      Developed responsive and interactive user interfaces from UI/UX designs within
+                      the Inertia ecosystem.
+                    </li>
+                  </ul>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge border text-body">Laravel</span>
+                    <span class="badge border text-body">React.js</span>
+                    <span class="badge border text-body">Inertia.js</span>
+                    <span class="badge border text-body">MySQL</span>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-          <!-- Education -->
-          <!-- <section id="education" class="py-5 border-bottom border-body">
-            <div class="text-center mb-5" data-aos="zoom-in">
-              <h1 class="display-6 fw-semibold">Education</h1>
-              <hr class="w-25 mx-auto" />
+            <!-- NunWaYo -->
+            <div class="col-lg-9" data-aos="fade-left">
+              <div class="card border shadow-sm">
+                <div class="card-body p-4">
+                  <div class="mb-3">
+                    <div
+                      class="d-flex flex-column flex-md-row justify-content-between align-items-md-start"
+                    >
+                      <div>
+                        <a
+                          href="https://nunwayo.com/home/"
+                          target="_blank"
+                          class="fw-semibold fs-5 text-decoration-none"
+                        >
+                          NunWaYo
+                          <i class="bi bi-box-arrow-up-right small"></i>
+                        </a>
+                        <h5 class="fs-6 fw-normal mt-2 mb-1">Back End Developer</h5>
+                      </div>
+                      <div class="text-body-secondary small mt-1 mt-md-0 text-md-end flex-shrink-0">
+                        <span
+                          class="employment-duration"
+                          data-start="2025-02"
+                          data-end="2025-10"
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3 text-body-secondary small">
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-briefcase-fill"></i>
+                        Freelance
+                      </span>
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        Bendungan Hilir, Jakarta
+                      </span>
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-laptop"></i>
+                        Remote
+                      </span>
+                    </div>
+                  </div>
+                  <ul class="mb-4">
+                    <li>
+                      Engineered and maintained robust APIs for Point-of-Sale (POS) systems and
+                      customer-facing applications.
+                    </li>
+                    <li>
+                      Integrated the Biteship API to automate real-time shipping rate calculations
+                      and streamline logistics management for customer orders.
+                    </li>
+                    <li>
+                      Authored and maintained comprehensive API documentation using Swagger,
+                      enhancing cross-functional team collaboration and future system scalability.
+                    </li>
+                    <li>
+                      Monitored server health and optimized backend performance to ensure high
+                      availability and application stability.
+                    </li>
+                  </ul>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge border text-body">Node.js</span>
+                    <span class="badge border text-body">Express.js</span>
+                    <span class="badge border text-body">Swagger</span>
+                    <span class="badge border text-body">MySQL</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </section> -->
-          <!-- Projects -->
-          <!-- <section id="project" class="py-5 border-bottom border-body">
+            <!-- Productzilla Academy -->
+            <div class="col-lg-9" data-aos="fade-right">
+              <div class="card border shadow-sm">
+                <div class="card-body p-4">
+                  <div class="mb-3">
+                    <div
+                      class="d-flex flex-column flex-md-row justify-content-between align-items-md-start"
+                    >
+                      <div>
+                        <a
+                          href="https://www.productzillaacademy.com/"
+                          target="_blank"
+                          class="fw-semibold fs-5 text-decoration-none"
+                        >
+                          Productzilla Academy
+                          <i class="bi bi-box-arrow-up-right small"></i>
+                        </a>
+                        <h5 class="fs-6 fw-normal mt-2 mb-1">Full Stack Developer</h5>
+                      </div>
+                      <div class="text-body-secondary small mt-1 mt-md-0 text-md-end flex-shrink-0">
+                        <span
+                          class="employment-duration"
+                          data-start="2024-08"
+                          data-end="2024-12"
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3 text-body-secondary small">
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-briefcase-fill"></i>
+                        Internship
+                      </span>
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        Bandung, Jawa Barat
+                      </span>
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-laptop"></i>
+                        Remote
+                      </span>
+                    </div>
+                  </div>
+                  <ul class="mb-4">
+                    <li>Developed a boarding house management system utilizing the MERN stack.</li>
+                    <li>Integrated Midtrans payment gateway for online payment processing.</li>
+                    <li>Implemented unit and integration testing using Jest.</li>
+                    <li>Created and maintained API documentation using Swagger.</li>
+                    <li>Established CI/CD pipelines with GitHub Actions.</li>
+                    <li>Deployed and managed applications on Vercel.</li>
+                  </ul>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge border text-body">Node.js</span>
+                    <span class="badge border text-body">React.js</span>
+                    <span class="badge border text-body">Swagger</span>
+                    <span class="badge border text-body">MongoDB</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Ganesha Inovasi Teknologi -->
+            <div class="col-lg-9" data-aos="fade-left">
+              <div class="card border shadow-sm">
+                <div class="card-body p-4">
+                  <div class="mb-3">
+                    <div
+                      class="d-flex flex-column flex-md-row justify-content-between align-items-md-start"
+                    >
+                      <div>
+                        <a
+                          href="https://git-id.com/"
+                          target="_blank"
+                          class="fw-semibold fs-5 text-decoration-none"
+                        >
+                          Ganesha Inovasi Teknologi
+                          <i class="bi bi-box-arrow-up-right small"></i>
+                        </a>
+                        <h5 class="fs-6 fw-normal mt-2 mb-1">Back End Developer</h5>
+                      </div>
+                      <div class="text-body-secondary small mt-1 mt-md-0 text-md-end flex-shrink-0">
+                        <span
+                          class="employment-duration"
+                          data-start="2024-02"
+                          data-end="2024-07"
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3 text-body-secondary small">
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-briefcase-fill"></i>
+                        Internship
+                      </span>
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        Denpasar, Bali
+                      </span>
+                      <span class="d-flex align-items-center gap-1">
+                        <i class="bi bi-laptop"></i>
+                        Work From Anywhere
+                      </span>
+                    </div>
+                  </div>
+                  <ul class="mb-4">
+                    <li>
+                      Developed scalable and high-performance APIs using Node.js and MongoDB to
+                      support core web application functionalities.
+                    </li>
+                    <li>Implemented a secure authentication system by integrating Google OAuth.</li>
+                    <li>
+                      Designed and deployed RESTful APIs while implementing strict data encryption
+                      protocols to ensure user security.
+                    </li>
+                  </ul>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge border text-body">Node.js</span>
+                    <span class="badge border text-body">Express.js</span>
+                    <span class="badge border text-body">Swagger</span>
+                    <span class="badge border text-body">MySQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="py-5 border-bottom border-body">
+          <div class="text-center mb-5" data-aos="zoom-in">
+            <h1 class="display-6 fw-semibold">Education</h1>
+            <hr class="w-25 mx-auto" />
+          </div>
+
+          <div class="timeline">
+            <!-- Item 1 -->
+            <div class="timeline-item" data-aos="fade-right">
+              <div class="timeline-dot"></div>
+
+              <div class="card border shadow-sm">
+                <div class="card-body">
+                  <h5 class="fw-semibold mb-1">Universitas Pendidikan Ganesha</h5>
+
+                  <p class="mb-1 text-body-secondary">Bachelor of Information Systems</p>
+
+                  <small class="text-body-secondary">2021 - 2025</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item" data-aos="fade-left">
+              <div class="timeline-dot"></div>
+
+              <div class="card border shadow-sm">
+                <div class="card-body">
+                  <h5 class="fw-semibold mb-1">Productzilla Academy</h5>
+
+                  <p class="mb-1 text-body-secondary">Full Stack Developer Bootcamp</p>
+
+                  <small class="text-body-secondary">2024</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <!-- <section id="project" class="py-5 border-bottom border-body">
             <div class="text-center mb-5" data-aos="zoom-in">
               <h1 class="display-6 fw-semibold">Projects</h1>
               <hr class="w-25 mx-auto" />
             </div>
           </section> -->
-          <!-- Skills -->
-          <!-- <section id="skills" class="py-5 border-bottom border-body">
+
+        <!-- Skills -->
+        <!-- <section id="skills" class="py-5 border-bottom border-body">
             <div class="text-center mb-5" data-aos="zoom-in">
               <h1 class="display-6 fw-semibold">Skills</h1>
               <hr class="w-25 mx-auto" />
             </div>
           </section> -->
-        </div>
-      </main>
+      </div>
+    </main>
 
-      <footer class="py-4 text-center">
-        <div class="container">
-          <div>
-            <h2 class="fw-bold">Let's Build Something Together</h2>
+    <footer class="py-4 text-center" data-aos="fade-up">
+      <div class="container">
+        <div>
+          <h2 class="fw-bold">Let's Build Something Together</h2>
 
-            <p class="text-body-secondary mb-4">
-              Available for Full-Time, Freelance, and Remote Opportunities.
-            </p>
+          <p class="text-body-secondary mb-4">
+            Available for Full-Time, Freelance, and Remote Opportunities.
+          </p>
 
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-              <a
-                href="mailto:mochrul.kurniawan@gmail.com"
-                class="btn btn-primary rounded-pill px-4"
-              >
-                <i class="bi bi-envelope-fill me-2"></i>
-                Email Me
-              </a>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="mailto:mochrul.kurniawan@gmail.com" class="btn btn-primary rounded-pill px-4">
+              <i class="bi bi-envelope-fill me-2"></i>
+              Email Me
+            </a>
 
-              <a
-                href="https://www.linkedin.com/in/mochammadsk/"
-                target="_blank"
-                class="btn btn-outline-secondary rounded-pill px-4"
-              >
-                <i class="bi bi-linkedin me-2"></i>
-                LinkedIn
-              </a>
+            <a
+              href="https://www.linkedin.com/in/mochammadsk/"
+              target="_blank"
+              class="btn btn-outline-secondary rounded-pill px-4"
+            >
+              <i class="bi bi-linkedin me-2"></i>
+              LinkedIn
+            </a>
 
-              <a
-                href="https://github.com/mochammadsk"
-                target="_blank"
-                class="btn btn-outline-secondary rounded-pill px-4"
-              >
-                <i class="bi bi-github me-2"></i>
-                GitHub
-              </a>
-            </div>
-          </div>
-
-          <hr class="my-4" />
-
-          <div class="text-body-secondary small">
-            ©
-            <span id="year"></span>
-            Mochammad Syahrul Kurniawan
+            <a
+              href="https://github.com/mochammadsk"
+              target="_blank"
+              class="btn btn-outline-secondary rounded-pill px-4"
+            >
+              <i class="bi bi-github me-2"></i>
+              GitHub
+            </a>
           </div>
         </div>
-      </footer>
-    </div>
+
+        <hr class="my-4" />
+
+        <div class="text-body-secondary small">
+          ©
+          <span id="year"></span>
+          Mochammad Syahrul Kurniawan
+        </div>
+      </div>
+    </footer>
+    <!-- </div> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

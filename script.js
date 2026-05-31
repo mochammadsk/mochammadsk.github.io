@@ -8,7 +8,7 @@ const html = document.documentElement;
 const themeButton = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 
-const logo = document.getElementById('site-logo');
+const logo = document.getElementById('img-logo');
 
 const savedTheme = localStorage.getItem('theme') || 'dark';
 
