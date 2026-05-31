@@ -11,10 +11,13 @@ document.querySelectorAll('[data-aos]').forEach((el) => {
 });
 
 AOS.init({
-  duration: 1000,
+  duration: 1200,
+  delay: 100,
   offset: 50,
-  disable: true,
+  once: true,
 });
+
+document.querySelector('#about > div').getAttribute('data-aos');
 
 // Tooltip
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
