@@ -53,12 +53,12 @@ section {
   color: #eb4334;
 }
 
-.timeline {
+#timeline {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
 }
-.timeline::before {
+#timeline::before {
   content: '';
   position: absolute;
   left: 18px;
@@ -67,12 +67,12 @@ section {
   width: 2px;
   background: var(--bs-border-color);
 }
-.timeline-item {
+#timeline-item {
   position: relative;
   padding-left: 60px;
   margin-bottom: 2rem;
 }
-.timeline-dot {
+#timeline-dot {
   position: absolute;
   left: 10px;
   top: 24px;

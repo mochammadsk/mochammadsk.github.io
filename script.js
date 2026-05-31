@@ -1,26 +1,28 @@
-// AOS
+// AOS Animation
 AOS.init({
   duration: 1000,
 });
+
+// Tooltip
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);
 
 // Theme
 const html = document.documentElement;
 const themeButton = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
-
 const logo = document.getElementById('img-logo');
-
 const savedTheme = localStorage.getItem('theme') || 'dark';
 
 setTheme(savedTheme);
 
 themeButton.addEventListener('click', () => {
   const currentTheme = html.getAttribute('data-bs-theme');
-
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
   setTheme(newTheme);
-
   localStorage.setItem('theme', newTheme);
 });
 
@@ -63,20 +65,12 @@ sections.forEach((section) => {
   observer.observe(section);
 });
 
-// Tooltip
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map(
-  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-);
-
 // Employment Duration
 document.querySelectorAll('.employment-duration').forEach((el) => {
   const start = el.dataset.start;
   const end = el.dataset.end;
 
   const startDate = new Date(start);
-
-  // jika tidak ada end -> pakai tanggal sekarang
   const endDate = end ? new Date(end) : new Date();
 
   let months =
@@ -104,7 +98,6 @@ document.querySelectorAll('.employment-duration').forEach((el) => {
   if (years > 0) {
     durationParts.push(`${years} yr`);
   }
-
   if (remainingMonths > 0) {
     durationParts.push(`${remainingMonths} mos`);
   }
