@@ -22,14 +22,15 @@ section {
 
 #img-logo {
   width: 70px;
-  /* height: 70px; */
   -webkit-user-drag: none;
   user-select: none;
+  pointer-events: none;
 }
 #img-profile {
   width: 250px;
   -webkit-user-drag: none;
   user-select: none;
+  pointer-events: none;
 }
 
 #social-links a {
@@ -80,6 +81,16 @@ section {
   border-radius: 50%;
   background: var(--bs-primary);
   border: 3px solid var(--bs-body-bg);
+}
+
+.project-carousel img {
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
