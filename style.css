@@ -22,13 +22,12 @@ section {
 
 #img-logo {
   width: 70px;
-  height: 70px;
+  /* height: 70px; */
   -webkit-user-drag: none;
   user-select: none;
 }
 #img-profile {
   width: 250px;
-  height: 250px;
   -webkit-user-drag: none;
   user-select: none;
 }
@@ -53,45 +52,52 @@ section {
   color: #eb4334;
 }
 
-#timeline {
+.timeline {
   position: relative;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
-#timeline::before {
+.timeline::before {
   content: '';
   position: absolute;
-  left: 18px;
+  left: 12px;
   top: 0;
   bottom: 0;
   width: 2px;
   background: var(--bs-border-color);
 }
-#timeline-item {
+.timeline-item {
   position: relative;
-  padding-left: 60px;
-  margin-bottom: 2rem;
+  padding-left: 40px;
+  margin-bottom: 1.5rem;
 }
-#timeline-dot {
+.timeline-dot {
   position: absolute;
-  left: 10px;
+  left: 4px;
   top: 24px;
   width: 18px;
   height: 18px;
   border-radius: 50%;
   background: var(--bs-primary);
   border: 3px solid var(--bs-body-bg);
-  z-index: 1;
 }
 
 @media (min-width: 768px) {
   #img-logo {
     width: 95px;
-    height: 95px;
   }
-
   #img-profile {
     width: 300px;
-    height: 300px;
+  }
+
+  .timeline::before {
+    left: 18px;
+  }
+  .timeline-item {
+    padding-left: 60px;
+    margin-bottom: 2rem;
+  }
+  .timeline-dot {
+    left: 10px;
   }
 }
