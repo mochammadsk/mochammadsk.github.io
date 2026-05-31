@@ -1,9 +1,10 @@
 // AOS Animation
 AOS.init({
   duration: 1000,
+  offset: 50,
 });
 
-const isMobile = window.innerWidth < 768 || window.innerWidth < 992;
+const isMobile = window.innerWidth < 768;
 document.querySelectorAll('[data-aos]').forEach((el) => {
   if (isMobile) {
     const aos = el.dataset.aos;
