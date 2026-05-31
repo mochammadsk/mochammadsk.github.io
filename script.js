@@ -9,10 +9,8 @@ document.querySelectorAll('[data-aos]').forEach((el) => {
   if (isMobile) {
     const aos = el.dataset.aos;
 
-    if (aos === 'fade-left' || aos === 'fade-right') {
+    if (aos === 'fade-left' || aos === 'fade-right' || aos === 'zoom-in') {
       el.dataset.aos = 'fade-up';
-    } else if (aos === 'zoom-in') {
-      el.dataset.aos = 'fade-down';
     }
   }
 });
