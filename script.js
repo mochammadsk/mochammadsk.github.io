@@ -113,3 +113,6 @@ document.querySelectorAll('.employment-duration').forEach((el) => {
 
   el.textContent = `${startFormatted} - ${endFormatted} · ${duration}`;
 });
+
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();

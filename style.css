@@ -8,7 +8,8 @@ html {
 }
 
 h1,
-nav {
+nav,
+footer {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
