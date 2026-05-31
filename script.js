@@ -66,3 +66,34 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map(
   (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
 );
+
+// Employment Duration
+document.querySelectorAll('.employment-duration').forEach((el) => {
+  const start = el.dataset.start;
+
+  const startDate = new Date(start);
+  const now = new Date();
+
+  let months =
+    (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth());
+
+  const years = Math.floor(months / 12);
+  const remainingMonths = months % 12;
+
+  const startFormatted = startDate.toLocaleString('en-US', {
+    month: 'short',
+    year: 'numeric',
+  });
+
+  let duration = '';
+
+  if (years > 0) {
+    duration += `${years} yr `;
+  }
+
+  if (remainingMonths > 0) {
+    duration += `${remainingMonths} mos`;
+  }
+
+  el.textContent = `${startFormatted} - Present · (${duration})`;
+});
