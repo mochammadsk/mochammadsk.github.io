@@ -45,10 +45,10 @@ function setTheme(theme) {
 
   if (theme === 'dark') {
     themeIcon.className = 'bi bi-brightness-high-fill';
-    logo.src = '/assets/images/logo-dark.svg';
+    logo.src = '/assets/images/icons/ul-dark.svg';
   } else {
     themeIcon.className = 'bi bi-moon-stars-fill';
-    logo.src = '/assets/images/logo-light.svg';
+    logo.src = '/assets/images/icon/ul-light.svg';
   }
 }
 
