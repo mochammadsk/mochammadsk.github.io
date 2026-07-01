@@ -84,7 +84,7 @@ section {
 }
 
 .project-carousel img {
-  height: 300px;
+  height: 20rem;
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;

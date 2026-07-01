@@ -1,18 +1,35 @@
 export const projects = [
   {
+    id: 'gold-management',
+    title: 'Gold Management System',
+    description:
+      'Accounting and inventory management system for gold trading businesses, providing features for tracking transactions, managing inventory, and generating reports.',
+    technologies: ['Laravel', 'React.js', 'MySQL'],
+    imageClass: 'd-block w-100',
+    images: [
+      '/assets/images/projects/gold/login.svg',
+      '/assets/images/projects/gold/dashboard.svg',
+      '/assets/images/projects/gold/batch.svg',
+    ],
+    links: {
+      demo: null,
+      github: null,
+    },
+  },
+  {
     id: 'stayhub',
     title: 'StayHub',
     description:
       'StayHub is a platform that provides a convenient and user-friendly way for users to book accommodations and facilities.',
-    technologies: ['Laravel', 'React.js', 'MySQL'],
+    technologies: ['Express.js', 'React.js', 'MongoDB'],
     imageClass: 'd-block w-100',
     images: [
-      '/assets/images/projects/stayhub/landing-pages.svg',
-      '/assets/images/projects/stayhub/login.svg',
-      '/assets/images/projects/stayhub/dashboard.svg',
+      '/assets/images/projects/stayhub/login.png',
+      '/assets/images/projects/stayhub/landing.png',
+      '/assets/images/projects/stayhub/maps.png',
     ],
     links: {
-      demo: { url: 'https://kost-stayhub.vercel.app/', label: 'Live Demo' },
+      demo: { url: 'https://kost-stayhub.vercel.app/' },
       github: { url: 'https://github.com/mochammadsk/stayhub-frontend' },
     },
   },
@@ -20,19 +37,16 @@ export const projects = [
     id: 'nunwayo',
     title: 'NunWaYo',
     description:
-      'Online food ordering platform featuring user authentication, order management, and real-time tracking.',
-    technologies: ['Node.js', 'Express.js', 'MySQL'],
+      'Point of Sale (POS) application for managing sales, inventory, and customer transactions in a retail environment.',
+    technologies: ['Express.js', 'React.js', 'MySQL'],
     imageClass: 'd-block w-65 mx-auto',
     images: [
-      '/assets/images/projects/nunwayo/dashboard.svg',
-      '/assets/images/projects/nunwayo/order.svg',
-      '/assets/images/projects/nunwayo/map.svg',
+      '/assets/images/projects/nunwayo/login.png',
+      '/assets/images/projects/nunwayo/dashboard.png',
+      '/assets/images/projects/nunwayo/branch.png',
     ],
     links: {
-      demo: {
-        url: 'https://play.google.com/store/apps/details?id=com.nunwayo_customer',
-        label: 'Live Demo',
-      },
+      demo: null,
       github: null,
     },
   },
