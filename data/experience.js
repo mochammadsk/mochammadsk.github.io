@@ -5,8 +5,8 @@ export const experiences = [
     role: 'Full Stack Developer',
     period: { start: '2025-07' },
     meta: {
-      employmentType: 'Full Time',
-      location: 'Denpasar, Bali',
+      employmentType: 'Freelance',
+      location: 'Bali, Indonesia',
       workMode: 'Remote',
     },
     highlights: [
@@ -23,7 +23,7 @@ export const experiences = [
     period: { start: '2025-02', end: '2025-10' },
     meta: {
       employmentType: 'Freelance',
-      location: 'Bendungan Hilir, Jakarta',
+      location: 'Jakarta, Indonesia',
       workMode: 'Remote',
     },
     highlights: [
@@ -41,7 +41,7 @@ export const experiences = [
     period: { start: '2024-08', end: '2024-12' },
     meta: {
       employmentType: 'Internship',
-      location: 'Bandung, Jawa Barat',
+      location: 'Bandung, Indonesia',
       workMode: 'Remote',
     },
     highlights: [
@@ -61,8 +61,8 @@ export const experiences = [
     period: { start: '2024-02', end: '2024-07' },
     meta: {
       employmentType: 'Internship',
-      location: 'Denpasar, Bali',
-      workMode: 'Work From Anywhere',
+      location: 'Bali, Indonesia',
+      workMode: 'Hybrid',
     },
     highlights: [
       'Developed scalable and high-performance APIs using Node.js and MongoDB to support core web application functionalities.',
