@@ -1,5 +1,22 @@
 export const projects = [
   {
+    id: 'farm',
+    title: 'Farm Management System',
+    description:
+      'Accounting and inventory management system for agricultural businesses, providing features for tracking transactions, managing inventory, and generating reports.',
+    technologies: ['Laravel', 'React.js', 'MySQL'],
+    imageClass: 'd-block w-100',
+    images: [
+      '/assets/images/projects/farm/1.png',
+      '/assets/images/projects/farm/2.png',
+      '/assets/images/projects/farm/3.png',
+    ],
+    links: {
+      demo: null,
+      github: null,
+    },
+  },
+  {
     id: 'gold-management',
     title: 'Gold Management System',
     description:
@@ -7,9 +24,26 @@ export const projects = [
     technologies: ['Laravel', 'React.js', 'MySQL'],
     imageClass: 'd-block w-100',
     images: [
-      '/assets/images/projects/gold/login.svg',
-      '/assets/images/projects/gold/dashboard.svg',
-      '/assets/images/projects/gold/batch.svg',
+      '/assets/images/projects/gold/1.png',
+      '/assets/images/projects/gold/2.png',
+      '/assets/images/projects/gold/3.png',
+    ],
+    links: {
+      demo: null,
+      github: null,
+    },
+  },
+  {
+    id: 'nunwayo',
+    title: 'NunWaYo',
+    description:
+      'Point of Sale (POS) application for managing sales, inventory, and customer transactions in a retail environment.',
+    technologies: ['Express.js', 'React.js', 'MySQL'],
+    imageClass: 'd-block w-65 mx-auto',
+    images: [
+      '/assets/images/projects/nunwayo/1.png',
+      '/assets/images/projects/nunwayo/2.png',
+      '/assets/images/projects/nunwayo/3.png',
     ],
     links: {
       demo: null,
@@ -24,30 +58,13 @@ export const projects = [
     technologies: ['Express.js', 'React.js', 'MongoDB'],
     imageClass: 'd-block w-100',
     images: [
-      '/assets/images/projects/stayhub/login.png',
-      '/assets/images/projects/stayhub/landing.png',
-      '/assets/images/projects/stayhub/maps.png',
+      '/assets/images/projects/stayhub/1.png',
+      '/assets/images/projects/stayhub/2.png',
+      '/assets/images/projects/stayhub/3.png',
     ],
     links: {
       demo: { url: 'https://kost-stayhub.vercel.app/' },
       github: { url: 'https://github.com/mochammadsk/stayhub-frontend' },
-    },
-  },
-  {
-    id: 'nunwayo',
-    title: 'NunWaYo',
-    description:
-      'Point of Sale (POS) application for managing sales, inventory, and customer transactions in a retail environment.',
-    technologies: ['Express.js', 'React.js', 'MySQL'],
-    imageClass: 'd-block w-65 mx-auto',
-    images: [
-      '/assets/images/projects/nunwayo/login.png',
-      '/assets/images/projects/nunwayo/dashboard.png',
-      '/assets/images/projects/nunwayo/branch.png',
-    ],
-    links: {
-      demo: null,
-      github: null,
     },
   },
 ];
