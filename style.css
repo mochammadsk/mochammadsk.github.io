@@ -14,7 +14,6 @@
   --radius-pill: 999px;
   --shadow-sm: 0 8px 22px rgb(16 20 29 / 6%);
   --shadow-md: 0 16px 36px rgb(16 20 29 / 12%);
-  --transition: 180ms ease;
 }
 
 [data-theme='dark'] {
@@ -36,6 +35,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: var(--font-body);
   background: var(--bg);
@@ -43,9 +43,6 @@ body {
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  transition:
-    background var(--transition),
-    color var(--transition);
 }
 section {
   padding-block: 5rem;
@@ -94,6 +91,22 @@ footer {
   font-size: 0.85rem;
   color: var(--muted);
 }
+body,
+section,
+footer,
+button,
+a,
+#theme-toogle,
+.card,
+.github-card,
+.list-item,
+.tag,
+.skill {
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease;
+}
 
 /* Theme Toggle */
 #theme-toggle {
@@ -111,10 +124,6 @@ footer {
   border: 1px solid var(--border);
   border-radius: 50%;
   cursor: pointer;
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    transform var(--transition);
 }
 #theme-toggle:hover {
   transform: translateY(-2px);
@@ -157,7 +166,7 @@ footer {
   background-image:
     linear-gradient(to right, var(--grid) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
-  background-size: 2.85rem 2.85rem;
+  background-size: 2.535rem 2.535rem;
   mask-image: linear-gradient(to right, transparent 0%, rgb(0 0 0 / 65%) 50%, #000 100%);
   pointer-events: none;
 }
@@ -241,9 +250,6 @@ footer {
   background: #fff;
   border: 1.5px solid var(--border);
   border-radius: 50%;
-  transition:
-    transform var(--transition),
-    border-color var(--transition);
 }
 .social-links {
   display: grid;
@@ -346,10 +352,6 @@ footer {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 14px;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition),
-    border-color var(--transition);
 }
 .card:hover {
   transform: translateY(-3px);
@@ -373,12 +375,12 @@ footer {
   line-height: 1.7;
 }
 
-.company {
+.organization {
   display: inline-block;
   margin: 0 0 0.15rem;
   font-weight: 600;
 }
-.company:hover {
+.organization:hover {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -417,7 +419,7 @@ footer {
   font-weight: 500;
 }
 
-/* GitHub Contributions */
+/* GitHub Activity */
 .github-section {
   padding-block: 44px 32px;
   background-image: radial-gradient(var(--border) 0.8px, transparent 0.8px);
@@ -427,58 +429,42 @@ footer {
 
 .github-header {
   display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 24px;
-}
-
-.github-header__title {
-  margin-bottom: 0;
-  font-size: clamp(26px, 4vw, 34px);
-  font-weight: 600;
-  letter-spacing: -0.055em;
-  line-height: 1.2;
-}
-
-.github-total {
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.github-link {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  flex: 0 0 auto;
-  color: var(--text);
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.github-header > a {
+  flex-shrink: 0;
   font-size: 13px;
   font-weight: 600;
+  color: var(--muted);
 }
 
-.github-link:hover {
+.github-header > a:hover {
   text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
+/* Calendar card */
 .github-card {
+  min-width: 0;
   overflow: hidden;
-  padding: clamp(14px, 3vw, 24px);
+  padding: 20px 24px 16px;
   color: var(--text);
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 16px;
 }
 
 .github-calendar-layout {
   display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 26px minmax(0, 1fr);
+  gap: 8px;
 }
 
 .github-day-labels {
   display: grid;
-  grid-template-rows: 22px repeat(7, 11px);
+  grid-template-rows: 18px repeat(7, 11px);
   gap: 4px;
   color: var(--muted);
   font-size: 10px;
@@ -487,22 +473,24 @@ footer {
 .github-day-labels span {
   display: flex;
   align-items: center;
-  transform: translateY(12px);
+  transform: translateY(10px);
 }
 
+/* Shared horizontal scrolling area */
 .github-calendar-content {
   min-width: 0;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 8px;
+  padding-bottom: 4px;
   scrollbar-width: thin;
   scrollbar-color: #b9c0c7 transparent;
 }
 
+/* Month labels use the same width as the calendar */
 .github-months {
   position: relative;
-  display: block;
-  height: 22px;
+  width: 100%;
+  height: 18px;
   margin-bottom: 4px;
   color: var(--muted);
   font-size: 10px;
@@ -511,17 +499,18 @@ footer {
 .github-months span {
   position: absolute;
   top: 0;
-  line-height: 18px;
+  line-height: 16px;
   white-space: nowrap;
 }
 
+/* Flexible columns fill available desktop width */
 .github-calendar {
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: repeat(7, 11px);
-  grid-auto-columns: 11px;
+  grid-auto-columns: minmax(11px, 1fr);
   gap: 4px;
-  width: max-content;
+  width: 100%;
 }
 
 .github-day {
@@ -530,28 +519,29 @@ footer {
   height: 11px;
   padding: 0;
   background: #ebedf0;
-  border: 1px solid rgb(27 31 36 / 5%);
+  border: 0;
   border-radius: 3px;
+}
+
+.github-calendar > .github-day {
+  width: 100%;
+  min-width: 0;
 }
 
 .github-day[data-level='0'] {
   background: #ebedf0;
 }
-
 .github-day[data-level='1'] {
-  background: #9be9a8;
+  background: #aceebb;
 }
-
 .github-day[data-level='2'] {
-  background: #40c463;
+  background: #2da44e;
 }
-
 .github-day[data-level='3'] {
-  background: #30a14e;
+  background: #2da44e;
 }
-
 .github-day[data-level='4'] {
-  background: #216e39;
+  background: #116329;
 }
 
 .github-calendar .github-day:hover {
@@ -559,12 +549,13 @@ footer {
   outline-offset: 1px;
 }
 
-.github-card__footer {
+.github-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
 }
 
 .github-help {
@@ -575,16 +566,32 @@ footer {
 .github-legend {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   color: var(--muted);
   font-size: 11px;
   white-space: nowrap;
 }
 
 #github-error {
-  margin-top: 12px;
+  margin-top: 10px;
   color: #b42318;
   font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .github-card {
+    padding: 16px 14px 12px;
+    border-radius: 14px;
+  }
+
+  .github-calendar-layout {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .github-footer {
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 480px) {
@@ -635,7 +642,7 @@ footer {
     padding-block: 60px 30px;
   }
   .hero::before {
-    background-size: 35px 35px;
+    background-size: 2.675rem 2.675rem;
     mask-image: linear-gradient(to bottom right, transparent 0%, rgb(0 0 0 / 30%) 50%, #000 100%);
   }
   .hero-container {
@@ -735,7 +742,7 @@ footer {
     line-height: 1.3;
   }
 
-  .company {
+  .organization {
     display: block;
     width: fit-content;
     margin-top: 6px;
