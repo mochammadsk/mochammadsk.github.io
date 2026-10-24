@@ -10,8 +10,6 @@
   --font-body: 'Geist', sans-serif;
   --container-width: 960px;
   --container-gutter: 24px;
-  --header-height: 72px;
-  --radius-pill: 999px;
   --shadow-sm: 0 8px 22px rgb(16 20 29 / 6%);
   --shadow-md: 0 16px 36px rgb(16 20 29 / 12%);
 }
@@ -73,6 +71,7 @@ img {
   max-width: 100%;
   cursor: pointer;
   user-select: none;
+  pointer-events: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
 }
@@ -198,13 +197,6 @@ a,
     transform 260ms ease,
     box-shadow 260ms ease;
 }
-.avatar:hover {
-  transform: translateY(-6px) rotate(-3deg);
-  box-shadow: 0 20px 38px rgb(16 20 29 / 18%);
-}
-.avatar:active {
-  transform: translateY(-2px) rotate(0deg);
-}
 .role {
   padding-block: 0.2rem;
   color: var(--muted);
@@ -250,38 +242,34 @@ a,
   background: #fff;
   border: 1.5px solid var(--border);
   border-radius: 50%;
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease;
+  will-change: transform;
 }
 .social-links {
   display: grid;
   align-items: center;
   gap: 1rem;
 }
-.social-links > a:nth-child(1) {
-  transform: translateX(0px);
-}
-.social-links > a:nth-child(2) {
-  transform: translateX(16px);
-}
-.social-links > a:nth-child(3) {
-  transform: translateX(16px);
-}
+.social-links > a:nth-child(1),
 .social-links > a:nth-child(4) {
   transform: translateX(0px);
+}
+.social-links > a:nth-child(2),
+.social-links > a:nth-child(3) {
+  transform: translateX(16px);
 }
 .social-links > a:hover {
-  transform: translateX(var(--social-x, 0px)) translateY(-3px) scale(1.02);
+  transform: translateX(var(--social-x, 0px)) translateY(-4px) scale(1.04);
 }
-.social-links > a:nth-child(1) {
-  --social-x: 0px;
-}
-.social-links > a:nth-child(2) {
-  --social-x: 16px;
-}
-.social-links > a:nth-child(3) {
-  --social-x: 16px;
-}
+.social-links > a:nth-child(1),
 .social-links > a:nth-child(4) {
   --social-x: 0px;
+}
+.social-links > a:nth-child(2),
+.social-links > a:nth-child(3) {
+  --social-x: 16px;
 }
 
 .list {
@@ -401,7 +389,7 @@ a,
   font-size: 11px;
   line-height: 1.5;
   border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
+  border-radius: 999px;
 }
 
 /* Skill */
