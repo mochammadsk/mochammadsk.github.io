@@ -83,7 +83,6 @@ async function loadGitHubContributions() {
       cell.className = 'github-day';
       cell.dataset.level = String(level);
       cell.title = `${count} contributions on ${day.date}`;
-      cell.setAttribute('aria-label', cell.title);
 
       calendarFragment.appendChild(cell);
     });

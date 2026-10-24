@@ -69,6 +69,7 @@ h2 {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
   cursor: pointer;
   user-select: none;
   pointer-events: none;
