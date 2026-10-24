@@ -1,8 +1,10 @@
 // Theme Toggle
 document.getElementById('theme-toggle').addEventListener('click', function () {
-  var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
+  const currentTheme = document.documentElement.dataset.theme;
+  const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  document.documentElement.dataset.theme = nextTheme;
+  localStorage.setItem('theme', nextTheme);
 });
 
 // Year (footer)
