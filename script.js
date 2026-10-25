@@ -35,62 +35,109 @@ async function loadGitHubContributions() {
       throw new Error('No contribution data found.');
     }
 
-    const total = contributions.reduce((sum, day) => sum + Number(day.count || 0), 0);
+    // Map API data by date for quick lookup.
+    const contributionsByDate = new Map(contributions.map((day) => [day.date, day]));
 
-    totalElement.textContent = `${total.toLocaleString()} contributions in the last year`;
+    const formatDate = (date) => {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+
+      return `${year}-${month}-${day}`;
+    };
+
+    // Start on Sunday after the one-year cutoff.
+    // This makes the calendar begin with a complete week.
+    const today = new Date();
+    today.setHours(12, 0, 0, 0);
+
+    const cutoff = new Date(today);
+    cutoff.setFullYear(cutoff.getFullYear() - 1);
+
+    const startDate = new Date(cutoff);
+    startDate.setDate(startDate.getDate() + ((7 - startDate.getDay()) % 7));
+
+    // If the cutoff is Sunday, start the following Sunday.
+    if (startDate.getTime() === cutoff.getTime()) {
+      startDate.setDate(startDate.getDate() + 7);
+    }
 
     const calendarFragment = document.createDocumentFragment();
     const monthFragment = document.createDocumentFragment();
 
-    const firstDate = new Date(`${contributions[0].date}T12:00:00`);
-    const leadingDays = firstDate.getDay();
+    const visibleDays = [];
+    const cursor = new Date(startDate);
 
-    // invisible cells so the first date aligns with its weekday.
-    for (let i = 0; i < leadingDays; i++) {
-      const emptyCell = document.createElement('span');
-      emptyCell.className = 'github-day';
-      emptyCell.style.visibility = 'hidden';
-      emptyCell.setAttribute('aria-hidden', 'true');
-      calendarFragment.appendChild(emptyCell);
+    while (cursor <= today) {
+      const date = new Date(cursor);
+      const dateKey = formatDate(date);
+      const contribution = contributionsByDate.get(dateKey);
+
+      visibleDays.push({
+        date,
+        dateKey,
+        count: Number(contribution?.count ?? 0),
+        level: Math.max(0, Math.min(4, Number(contribution?.level ?? 0))),
+      });
+
+      cursor.setDate(cursor.getDate() + 1);
     }
 
-    let lastLabelWeek = -2;
+    // Complete the last week with invisible future cells.
+    while (visibleDays.length % 7 !== 0) {
+      const date = new Date(cursor);
 
-    contributions.forEach((day, index) => {
-      const date = new Date(`${day.date}T12:00:00`);
-      const weekIndex = Math.floor((leadingDays + index) / 7);
+      visibleDays.push({
+        date,
+        dateKey: formatDate(date),
+        count: 0,
+        level: 0,
+        future: true,
+      });
 
-      if (index === 0 || date.getDate() === 1) {
-        if (weekIndex - lastLabelWeek >= 2) {
-          const label = document.createElement('span');
+      cursor.setDate(cursor.getDate() + 1);
+    }
 
-          label.textContent = date.toLocaleString('en', {
-            month: 'short',
-          });
+    const total = visibleDays.reduce((sum, day) => sum + (day.future ? 0 : day.count), 0);
 
-          // Save week index (calculate the actual position after layout)
-          label.dataset.weekIndex = String(weekIndex);
-          monthFragment.appendChild(label);
+    totalElement.textContent = `${total.toLocaleString()} contributions in the last year`;
 
-          lastLabelWeek = weekIndex;
-        }
-      }
-
-      const count = Number(day.count || 0);
-      const level = Math.max(0, Math.min(4, Number(day.level) || 0));
-
+    // Render seven days per week, Sunday through Saturday.
+    visibleDays.forEach((day, index) => {
       const cell = document.createElement('span');
       cell.className = 'github-day';
-      cell.dataset.level = String(level);
-      cell.title = `${count} contributions on ${day.date}`;
+
+      if (day.future) {
+        cell.style.visibility = 'hidden';
+        cell.setAttribute('aria-hidden', 'true');
+      } else {
+        cell.dataset.level = String(day.level);
+        cell.title = `${day.count} contributions on ${day.dateKey}`;
+      }
 
       calendarFragment.appendChild(cell);
+
+      // Label the first month and each subsequent month.
+      const isFirstDay = day.date.getDate() === 1;
+      const isFirstVisibleDay = index === 0;
+
+      if (!day.future && (isFirstVisibleDay || isFirstDay)) {
+        const weekIndex = Math.floor(index / 7);
+        const label = document.createElement('span');
+
+        label.textContent = day.date.toLocaleString('en', {
+          month: 'short',
+        });
+
+        label.dataset.weekIndex = String(weekIndex);
+        monthFragment.appendChild(label);
+      }
     });
 
     calendar.replaceChildren(calendarFragment);
     months.replaceChildren(monthFragment);
 
-    // align month labels with the actual rendered week columns.
+    // Align month labels with their actual week columns.
     function alignMonthLabels() {
       const calendarRect = calendar.getBoundingClientRect();
 
@@ -100,36 +147,17 @@ async function loadGitHubContributions() {
 
         if (!firstCell) return;
 
-        const cellRect = firstCell.getBoundingClientRect();
-        const left = cellRect.left - calendarRect.left;
+        const left = firstCell.getBoundingClientRect().left - calendarRect.left;
 
         label.style.left = `${left}px`;
       });
     }
 
-    // Wait for the browser to calculate the flexible grid columns.
     requestAnimationFrame(alignMonthLabels);
 
-    // Re-align labels when the viewport changes size.
     if (!window.githubCalendarResizeHandler) {
       window.githubCalendarResizeHandler = () => {
-        requestAnimationFrame(() => {
-          const currentCalendar = document.getElementById('github-calendar');
-          const currentMonths = document.getElementById('github-months');
-
-          if (!currentCalendar || !currentMonths) return;
-
-          const calendarRect = currentCalendar.getBoundingClientRect();
-
-          currentMonths.querySelectorAll('span').forEach((label) => {
-            const weekIndex = Number(label.dataset.weekIndex);
-            const firstCell = currentCalendar.children[weekIndex * 7];
-
-            if (!firstCell) return;
-
-            label.style.left = `${firstCell.getBoundingClientRect().left - calendarRect.left}px`;
-          });
-        });
+        requestAnimationFrame(alignMonthLabels);
       };
 
       window.addEventListener('resize', window.githubCalendarResizeHandler);
