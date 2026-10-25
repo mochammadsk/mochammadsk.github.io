@@ -2,7 +2,7 @@
   color-scheme: light;
   --bg: #fffcfb;
   --text: #20221f;
-  --muted: #747770;
+  --muted: #62665f;
   --accent: #22396f;
   --border: #e5e5df;
   --grid: #e8eaed;
@@ -28,12 +28,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* border: 1px solid red; */
 }
 html {
   scroll-behavior: smooth;
 }
-
 body {
   font-family: var(--font-body);
   background: var(--bg);
@@ -70,12 +68,12 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  cursor: pointer;
   user-select: none;
   pointer-events: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
 }
+
 svg {
   width: 19px;
   height: 19px;
@@ -96,7 +94,7 @@ section,
 footer,
 button,
 a,
-#theme-toogle,
+#theme-toggle,
 .card,
 .github-card,
 .list-item,
@@ -108,7 +106,6 @@ a,
     border-color 300ms ease;
 }
 
-/* Theme Toggle */
 #theme-toggle {
   position: fixed;
   z-index: 1000;
@@ -123,7 +120,6 @@ a,
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 50%;
-  cursor: pointer;
 }
 #theme-toggle:hover {
   transform: translateY(-2px);
@@ -148,7 +144,6 @@ a,
   margin-inline: auto;
 }
 
-/* Hero */
 .hero {
   position: relative;
   isolation: isolate;
@@ -215,7 +210,6 @@ a,
   line-height: 1.5;
 }
 
-/* Social Links */
 .social {
   display: grid;
   align-items: center;
@@ -246,12 +240,6 @@ a,
   transition:
     transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
     opacity 220ms ease;
-  will-change: transform;
-}
-.social-links {
-  display: grid;
-  align-items: center;
-  gap: 1rem;
 }
 .social-links > a:nth-child(1),
 .social-links > a:nth-child(4) {
@@ -393,7 +381,6 @@ a,
   border-radius: 999px;
 }
 
-/* Skill */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -408,14 +395,12 @@ a,
   font-weight: 500;
 }
 
-/* GitHub Activity */
 .github-section {
   padding-block: 44px 32px;
   background-image: radial-gradient(var(--border) 0.8px, transparent 0.8px);
   background-size: 13px 13px;
   border-top: 1px solid var(--border);
 }
-
 .github-header {
   display: flex;
   align-items: center;
@@ -428,13 +413,10 @@ a,
   font-weight: 600;
   color: var(--muted);
 }
-
 .github-header > a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-
-/* Calendar card */
 .github-card {
   min-width: 0;
   overflow: hidden;
@@ -444,13 +426,11 @@ a,
   border: 1px solid var(--border);
   border-radius: 16px;
 }
-
 .github-calendar-layout {
   display: grid;
   grid-template-columns: 26px minmax(0, 1fr);
   gap: 8px;
 }
-
 .github-day-labels {
   display: grid;
   grid-template-rows: 18px repeat(7, 11px);
@@ -458,14 +438,11 @@ a,
   color: var(--muted);
   font-size: 10px;
 }
-
 .github-day-labels span {
   display: flex;
   align-items: center;
   transform: translateY(10px);
 }
-
-/* Shared horizontal scrolling area */
 .github-calendar-content {
   min-width: 0;
   overflow-x: auto;
@@ -474,8 +451,6 @@ a,
   scrollbar-width: thin;
   scrollbar-color: #b9c0c7 transparent;
 }
-
-/* Month labels use the same width as the calendar */
 .github-months {
   position: relative;
   width: 100%;
@@ -484,15 +459,12 @@ a,
   color: var(--muted);
   font-size: 10px;
 }
-
 .github-months span {
   position: absolute;
   top: 0;
   line-height: 16px;
   white-space: nowrap;
 }
-
-/* Flexible columns fill available desktop width */
 .github-calendar {
   display: grid;
   grid-auto-flow: column;
@@ -501,7 +473,6 @@ a,
   gap: 4px;
   width: 100%;
 }
-
 .github-day {
   display: block;
   width: 11px;
@@ -511,12 +482,10 @@ a,
   border: 0;
   border-radius: 3px;
 }
-
 .github-calendar > .github-day {
   width: 100%;
   min-width: 0;
 }
-
 .github-day[data-level='0'] {
   background: #ebedf0;
 }
@@ -532,12 +501,10 @@ a,
 .github-day[data-level='4'] {
   background: #116329;
 }
-
 .github-calendar .github-day:hover {
   outline: 2px solid #68717d;
   outline-offset: 1px;
 }
-
 .github-footer {
   display: flex;
   align-items: center;
@@ -546,12 +513,10 @@ a,
   gap: 12px;
   margin-top: 14px;
 }
-
 .github-help {
   color: var(--muted);
   font-size: 12px;
 }
-
 .github-legend {
   display: flex;
   align-items: center;
@@ -560,7 +525,6 @@ a,
   font-size: 11px;
   white-space: nowrap;
 }
-
 #github-error {
   margin-top: 10px;
   color: #b42318;
@@ -572,12 +536,10 @@ a,
     padding: 16px 14px 12px;
     border-radius: 14px;
   }
-
   .github-calendar-layout {
     grid-template-columns: 24px minmax(0, 1fr);
     gap: 6px;
   }
-
   .github-footer {
     align-items: flex-start;
   }
@@ -588,10 +550,6 @@ a,
     font-size: 14px;
     line-height: 1.7;
   }
-  section {
-    padding-block: 5rem;
-    border-top: 1px solid var(--border);
-  }
   h1 {
     font-size: 1.8rem;
     font-weight: 600;
@@ -600,19 +558,7 @@ a,
   h2 {
     font-size: 1.5rem;
   }
-  img {
-    display: block;
-    max-width: 100%;
-    cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-  }
   footer {
-    padding-block: 1.5rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.85rem;
-    color: var(--muted);
     text-align: center;
   }
 
@@ -626,7 +572,6 @@ a,
     border-top: 1px solid var(--border);
   }
 
-  /* Hero */
   .hero {
     padding-block: 60px 30px;
   }
@@ -697,7 +642,6 @@ a,
     column-gap: 16px;
     padding-bottom: 28px;
   }
-
   .list-item::before {
     left: 7px;
     top: 10px;
@@ -744,12 +688,6 @@ a,
   .title {
     font-size: 20px;
   }
-  .desc {
-    max-width: 760px;
-    margin: 0;
-    color: var(--muted);
-    line-height: 1.7;
-  }
 }
 
 @keyframes experience-pulse {
@@ -781,7 +719,7 @@ a,
     transition-duration: 0.01ms !important;
   }
 
-  .ot-active {
+  .dot-active {
     animation: none;
   }
 }
