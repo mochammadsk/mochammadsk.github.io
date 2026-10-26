@@ -507,11 +507,9 @@ a,
 }
 .github-footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 14px;
+  align-items: end;
+  justify-content: end;
+  margin-top: 0.75rem;
 }
 .github-help {
   color: var(--muted);
@@ -546,6 +544,14 @@ a,
 }
 
 @media (max-width: 480px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    scrollbar-width: none;
+  }
+
   body {
     font-size: 14px;
     line-height: 1.7;
@@ -687,6 +693,14 @@ a,
   }
   .title {
     font-size: 20px;
+  }
+
+  .github-calendar-content {
+    scrollbar-width: none;
+  }
+
+  .github-calendar-content::-webkit-scrollbar {
+    display: none;
   }
 }
 

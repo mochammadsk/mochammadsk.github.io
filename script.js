@@ -98,9 +98,22 @@ async function loadGitHubContributions() {
       cursor.setDate(cursor.getDate() + 1);
     }
 
-    const total = visibleDays.reduce((sum, day) => sum + (day.future ? 0 : day.count), 0);
+    const total = data.total?.lastYear;
+    totalElement.textContent = `${Number(total ?? 0).toLocaleString()} contributions in the last year`;
 
-    totalElement.textContent = `${total.toLocaleString()} contributions in the last year`;
+    function getOrdinalSuffix(day) {
+      if (day >= 11 && day <= 13) return 'th';
+      switch (day % 10) {
+        case 1:
+          return 'st';
+        case 2:
+          return 'nd';
+        case 3:
+          return 'rd';
+        default:
+          return 'th';
+      }
+    }
 
     // Render seven days per week, Sunday through Saturday.
     visibleDays.forEach((day, index) => {
@@ -111,8 +124,9 @@ async function loadGitHubContributions() {
         cell.style.visibility = 'hidden';
         cell.setAttribute('aria-hidden', 'true');
       } else {
+        cell.className = 'github-day';
         cell.dataset.level = String(day.level);
-        cell.title = `${day.count} contributions on ${day.dateKey}`;
+        cell.title = `${day.count} contributions on ${day.date.toLocaleDateString('en-US', { month: 'short' })} ${day.date.getDate()}${getOrdinalSuffix(day.date.getDate())}`;
       }
 
       calendarFragment.appendChild(cell);
