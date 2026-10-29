@@ -15,6 +15,7 @@
     <link rel="icon" href="/images/favicon.png" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="mochammadsk.is-a.dev" />
     <meta property="og:url" content="https://mochammadsk.is-a.dev/" />
     <meta property="og:title" content="Mochammad Syahrul Kurniawan" />
     <meta
@@ -36,6 +37,15 @@
           storedTheme === "dark" || storedTheme === "light" ? storedTheme : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         document.documentElement.dataset.theme = theme;
       })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "mochammadsk.is-a.dev",
+        "url": "https://mochammadsk.is-a.dev/"
+      }
     </script>
 
     <link rel="stylesheet" href="/style.css" />
