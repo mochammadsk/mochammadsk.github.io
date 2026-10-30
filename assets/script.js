@@ -1,28 +1,26 @@
 // Theme Toggle
-document.getElementById('theme-toggle').addEventListener('click', function () {
+document.getElementById("theme-toggle").addEventListener("click", function () {
   const currentTheme = document.documentElement.dataset.theme;
-  const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
 
   document.documentElement.dataset.theme = nextTheme;
-  localStorage.setItem('theme', nextTheme);
+  localStorage.setItem("theme", nextTheme);
 });
 
 // Year (footer)
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
 // GitHub Contributions
 async function loadGitHubContributions() {
-  const calendar = document.getElementById('github-calendar');
-  const months = document.getElementById('github-months');
-  const totalElement = document.getElementById('github-total');
-  const errorElement = document.getElementById('github-error');
+  const calendar = document.getElementById("github-calendar");
+  const months = document.getElementById("github-months");
+  const totalElement = document.getElementById("github-total");
+  const errorElement = document.getElementById("github-error");
 
   if (!calendar || !months || !totalElement || !errorElement) return;
 
   try {
-    const response = await fetch(
-      'https://github-contributions-api.jogruber.de/v4/mochammadsk?y=last'
-    );
+    const response = await fetch("https://github-contributions-api.jogruber.de/v4/mochammadsk?y=last");
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
@@ -32,7 +30,7 @@ async function loadGitHubContributions() {
     const contributions = data.contributions ?? [];
 
     if (!contributions.length) {
-      throw new Error('No contribution data found.');
+      throw new Error("No contribution data found.");
     }
 
     // Map API data by date for quick lookup.
@@ -40,8 +38,8 @@ async function loadGitHubContributions() {
 
     const formatDate = (date) => {
       const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
 
       return `${year}-${month}-${day}`;
     };
@@ -102,31 +100,31 @@ async function loadGitHubContributions() {
     totalElement.textContent = `${Number(total ?? 0).toLocaleString()} contributions in the last year`;
 
     function getOrdinalSuffix(day) {
-      if (day >= 11 && day <= 13) return 'th';
+      if (day >= 11 && day <= 13) return "th";
       switch (day % 10) {
         case 1:
-          return 'st';
+          return "st";
         case 2:
-          return 'nd';
+          return "nd";
         case 3:
-          return 'rd';
+          return "rd";
         default:
-          return 'th';
+          return "th";
       }
     }
 
     // Render seven days per week, Sunday through Saturday.
     visibleDays.forEach((day, index) => {
-      const cell = document.createElement('span');
-      cell.className = 'github-day';
+      const cell = document.createElement("span");
+      cell.className = "github-day";
 
       if (day.future) {
-        cell.style.visibility = 'hidden';
-        cell.setAttribute('aria-hidden', 'true');
+        cell.style.visibility = "hidden";
+        cell.setAttribute("aria-hidden", "true");
       } else {
-        cell.className = 'github-day';
+        cell.className = "github-day";
         cell.dataset.level = String(day.level);
-        cell.title = `${day.count} contributions on ${day.date.toLocaleDateString('en-US', { month: 'short' })} ${day.date.getDate()}${getOrdinalSuffix(day.date.getDate())}`;
+        cell.title = `${day.count} contributions on ${day.date.toLocaleDateString("en-US", { month: "short" })} ${day.date.getDate()}${getOrdinalSuffix(day.date.getDate())}`;
       }
 
       calendarFragment.appendChild(cell);
@@ -137,10 +135,10 @@ async function loadGitHubContributions() {
 
       if (!day.future && (isFirstVisibleDay || isFirstDay)) {
         const weekIndex = Math.floor(index / 7);
-        const label = document.createElement('span');
+        const label = document.createElement("span");
 
-        label.textContent = day.date.toLocaleString('en', {
-          month: 'short',
+        label.textContent = day.date.toLocaleString("en", {
+          month: "short",
         });
 
         label.dataset.weekIndex = String(weekIndex);
@@ -155,7 +153,7 @@ async function loadGitHubContributions() {
     function alignMonthLabels() {
       const calendarRect = calendar.getBoundingClientRect();
 
-      months.querySelectorAll('span').forEach((label) => {
+      months.querySelectorAll("span").forEach((label) => {
         const weekIndex = Number(label.dataset.weekIndex);
         const firstCell = calendar.children[weekIndex * 7];
 
@@ -174,15 +172,15 @@ async function loadGitHubContributions() {
         requestAnimationFrame(alignMonthLabels);
       };
 
-      window.addEventListener('resize', window.githubCalendarResizeHandler);
+      window.addEventListener("resize", window.githubCalendarResizeHandler);
     }
 
-    errorElement.textContent = '';
+    errorElement.textContent = "";
   } catch (error) {
-    console.error('Failed to load GitHub contributions:', error);
+    console.error("Failed to load GitHub contributions:", error);
 
-    totalElement.textContent = 'GitHub contributions';
-    errorElement.textContent = 'Unable to load contributions right now. Please try again later.';
+    totalElement.textContent = "GitHub contributions";
+    errorElement.textContent = "Unable to load contributions right now. Please try again later.";
   }
 }
 

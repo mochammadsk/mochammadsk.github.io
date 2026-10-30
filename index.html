@@ -32,8 +32,7 @@
     <script>
       (function () {
         const storedTheme = localStorage.getItem("theme");
-        const theme =
-          storedTheme === "dark" || storedTheme === "light" ? storedTheme : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const theme = storedTheme === "dark" || storedTheme === "light" ? storedTheme : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         document.documentElement.dataset.theme = theme;
       })();
     </script>
@@ -89,8 +88,8 @@
       }
     </script>
 
-    <link rel="stylesheet" href="/style.css" />
-    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="/assets/script.js" defer></script>
   </head>
 
   <body>
@@ -116,10 +115,7 @@
                 <p class="location">Bali, Indonesia</p>
               </div>
             </div>
-            <p class="bio">
-              Focused on application security, clean code, and robust architecture. Passionate about API security and vulnerability testing to build reliable,
-              secure software.
-            </p>
+            <p class="bio">Focused on application security, clean code, and robust architecture. Passionate about API security and vulnerability testing to build reliable, secure software.</p>
           </div>
 
           <aside class="social">
@@ -163,7 +159,6 @@
       <section id="experience">
         <div class="container">
           <h2>Work Experience</h2>
-
           <ol class="list">
             <li class="list-item">
               <p class="date">Jul 2025 - Present</p>
@@ -171,10 +166,7 @@
               <div>
                 <h3>Software Engineer</h3>
                 <a href="https://duniateknologinusantara.com/" target="_blank" rel="noopener noreferrer" class="organization">PT. Dunia Teknologi Nusantara</a>
-                <p class="desc">
-                  Developing an end-to-end ERP (Enterprise Resource Planning) system, spanning database architecture, robust backend services, and a responsive
-                  frontend interface.
-                </p>
+                <p class="desc">Developing an end-to-end ERP (Enterprise Resource Planning) system, spanning database architecture, robust backend services, and a responsive frontend interface.</p>
               </div>
             </li>
 
@@ -185,8 +177,8 @@
                 <h3>Backend Developer</h3>
                 <a href="https://nunwayo.com/home/" target="_blank" rel="noopener noreferrer" class="organization">NunWaYo Restaurant</a>
                 <p class="desc">
-                  Developing and maintaining APIs across multiple modules, including POS (Point of Sales) systems, Shopify integrations, and HRMS (Human
-                  Resource Management System). In addition to development, I'm responsible for monitoring and maintaining the server for smooth web performance.
+                  Developing and maintaining APIs across multiple modules, including POS (Point of Sales) systems, Shopify integrations, and HRMS (Human Resource Management System). In addition to
+                  development, I'm responsible for monitoring and maintaining the server for smooth web performance.
                 </p>
               </div>
             </li>
@@ -207,7 +199,6 @@
       <section id="education">
         <div class="container">
           <h2>Education</h2>
-
           <ol class="list">
             <li class="list-item">
               <p class="date">Aug 2021 - Aug 2026</p>
@@ -245,7 +236,6 @@
       <section id="projects">
         <div class="container">
           <h2>Projects</h2>
-
           <div class="grid">
             <article class="card">
               <img
@@ -258,9 +248,7 @@
                 draggable="false" />
               <div>
                 <h3>Farmos - Agriculture Management System</h3>
-                <p class="desc">
-                  Agriculture management system for farmers, providing features for tracking crops, managing livestock, and generating reports.
-                </p>
+                <p class="desc">Agriculture management system for farmers, providing features for tracking crops, managing livestock, and generating reports.</p>
                 <div class="stack">
                   <span class="tag">Laravel</span>
                   <span class="tag">React</span>
@@ -281,10 +269,7 @@
                 draggable="false" />
               <div>
                 <h3>Gold - Enterprise Resource Planning (ERP) System</h3>
-                <p class="desc">
-                  Enterprise Resource Planning (ERP) system for a gold mining company, providing features for tracking mining operations, managing employees,
-                  and generating reports.
-                </p>
+                <p class="desc">Enterprise Resource Planning (ERP) system for a gold mining company, providing features for tracking mining operations, managing employees, and generating reports.</p>
                 <div class="stack">
                   <span class="tag">Laravel</span>
                   <span class="tag">React</span>
@@ -305,9 +290,7 @@
                 draggable="false" />
               <div>
                 <h3>NunWaYo - Point of Sale (POS) System</h3>
-                <p class="desc">
-                  Point of Sale (POS) system for a restaurant, providing features for tracking sales, managing employees, and generating reports.
-                </p>
+                <p class="desc">Point of Sale (POS) system for a restaurant, providing features for tracking sales, managing employees, and generating reports.</p>
                 <div class="stack">
                   <span class="tag">Node.js</span>
                   <span class="tag">Express</span>
@@ -364,10 +347,8 @@
       <section id="github-activity" class="github-section">
         <div class="container">
           <h2>GitHub Activity</h2>
-
           <div class="github-header">
             <p id="github-total" aria-live="polite">Loading contributions…</p>
-
             <a href="https://github.com/mochammadsk/" target="_blank" rel="noopener noreferrer">View GitHub</a>
           </div>
 
@@ -388,17 +369,16 @@
               </div>
             </div>
 
-            <div class="github-footer">
-              <div class="github-legend" aria-label="Contribution intensity legend">
-                <span>Less</span>
-                <span class="github-day" data-level="0"></span>
-                <span class="github-day" data-level="1"></span>
-                <span class="github-day" data-level="2"></span>
-                <span class="github-day" data-level="3"></span>
-                <span class="github-day" data-level="4"></span>
-                <span>More</span>
-              </div>
+            <div class="github-footer" aria-label="Contribution intensity legend">
+              <span>Less</span>
+              <span class="github-day" data-level="0"></span>
+              <span class="github-day" data-level="1"></span>
+              <span class="github-day" data-level="2"></span>
+              <span class="github-day" data-level="3"></span>
+              <span class="github-day" data-level="4"></span>
+              <span>More</span>
             </div>
+
             <p id="github-error" role="status"></p>
           </div>
         </div>

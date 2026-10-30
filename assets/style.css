@@ -56,10 +56,10 @@ h1 {
   line-height: 1.4;
 }
 h2 {
-  margin-bottom: 32px;
   font-size: clamp(1.35rem, 4vw, 2rem);
   font-weight: 600;
   line-height: 1.4;
+  margin-bottom: 2rem;
 }
 h3 {
   font-size: clamp(1.15rem, 3vw, 1.5rem);
@@ -391,7 +391,6 @@ a,
   padding-block: 44px 32px;
   background-image: radial-gradient(var(--border) 0.8px, transparent 0.8px);
   background-size: 13px 13px;
-  border-top: 1px solid var(--border);
 }
 .github-header {
   display: flex;
@@ -416,11 +415,11 @@ a,
   color: var(--text);
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 1rem;
 }
 .github-calendar-layout {
   display: grid;
-  grid-template-columns: 24px minmax(0, 1fr);
+  grid-template-columns: 1.5rem minmax(0, 1fr);
   gap: 6px;
 }
 .github-day-labels {
@@ -501,21 +500,13 @@ a,
 }
 .github-footer {
   display: flex;
-  align-items: flex-start;
-  justify-content: end;
-  margin-top: 0.75rem;
-}
-.github-help {
-  color: var(--muted);
-  font-size: 12px;
-}
-.github-legend {
-  display: flex;
   align-items: center;
   gap: 5px;
   color: var(--muted);
   font-size: 11px;
   white-space: nowrap;
+  margin-top: 0.75rem;
+  justify-content: end;
 }
 #github-error {
   margin-top: 10px;
@@ -532,16 +523,16 @@ a,
   }
 
   .hero {
-    padding-block: clamp(64px, 9vw, 108px) clamp(68px, 9vw, 100px);
+    padding-block: clamp(4rem, 9vw, 6.75rem) clamp(4.25rem, 9vw, 6.25rem);
   }
   .hero::before {
     background-size: 2.535rem 2.535rem;
     mask-image: linear-gradient(to right, transparent 0%, rgb(0 0 0 / 65%) 50%, #000 100%);
   }
   .hero-container {
-    width: min(calc(100% - 64px), 1080px);
+    width: min(calc(100% - 4rem), 67.5rem);
     grid-template-columns: minmax(0, 1fr) 150px;
-    gap: clamp(24px, 5vw, 64px);
+    gap: clamp(1.5rem, 5vw, 4rem);
   }
 
   .profile {
@@ -550,9 +541,6 @@ a,
   .avatar {
     width: 8rem;
     height: 8rem;
-  }
-  .bio {
-    text-align: left;
   }
 
   .social {
@@ -569,8 +557,8 @@ a,
   }
   .social-links > a:nth-child(2),
   .social-links > a:nth-child(3) {
-    transform: translateX(16px);
-    --social-x: 16px;
+    transform: translateX(1rem);
+    --social-x: 1rem;
   }
   .social-links > a:hover {
     transform: translateX(var(--social-x, 0px)) translateY(-4px) scale(1.04);
@@ -623,9 +611,6 @@ a,
   .github-calendar-layout {
     grid-template-columns: 26px minmax(0, 1fr);
     gap: 8px;
-  }
-  .github-footer {
-    align-items: end;
   }
   .github-calendar-content {
     scrollbar-width: thin;
