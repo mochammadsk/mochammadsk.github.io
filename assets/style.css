@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Geist";
+  src: url("/assets/fonts/geist.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   --bg: #fffcfb;
@@ -75,13 +83,7 @@ h3 {
   font-size: clamp(1.15rem, 3vw, 1.5rem);
   font-weight: 600;
   line-height: 1.4;
-  margin-bottom: 0.35rem;
-}
-h4 {
-  font-size: clamp(1.15rem, 2vw, 1.25rem);
-  font-weight: 600;
-  line-height: 1.4;
-  /* margin-bottom: 0.35rem; */
+  margin-bottom: 0.3rem;
 }
 img {
   display: block;
@@ -322,7 +324,6 @@ a,
   font-size: clamp(0.65rem, 3vw, 0.9rem);
   font-style: italic;
   color: var(--muted);
-  opacity: 0.8;
 }
 .dot {
   position: relative;
