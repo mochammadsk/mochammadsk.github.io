@@ -10,6 +10,39 @@ document.getElementById("theme-toggle").addEventListener("click", function () {
 // Year (footer)
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Duration
+function calculateWorkDuration(start, end) {
+  const [startYear, startMonth] = start.split("-").map(Number);
+
+  let endYear, endMonth;
+
+  if (end === "present") {
+    const now = new Date();
+    endYear = now.getFullYear();
+    endMonth = now.getMonth() + 1;
+  } else {
+    [endYear, endMonth] = end.split("-").map(Number);
+  }
+
+  const totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
+
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  const parts = [];
+
+  if (years > 0) parts.push(`${years} yr${years > 1 ? "s" : ""}`);
+  if (months > 0) parts.push(`${months} mo${months > 1 ? "s" : ""}`);
+
+  return parts.length ? parts.join(" ") : "Less than a month";
+}
+
+document.querySelectorAll(".duration").forEach((element) => {
+  const { start, end } = element.dataset;
+
+  element.textContent = `(${calculateWorkDuration(start, end)})`;
+});
+
 // GitHub Contributions
 async function loadGitHubContributions() {
   const calendar = document.getElementById("github-calendar");

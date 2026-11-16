@@ -6,6 +6,11 @@
   --accent: #22396f;
   --border: #e5e5df;
   --grid: #e8eaed;
+  --lvl-0: #dddddd;
+  --lvl-1: #aceebb;
+  --lvl-2: #4ac26b;
+  --lvl-3: #2da44e;
+  --lvl-4: #116329;
   --font-display: "Geist", serif;
   --font-body: "Geist", sans-serif;
 }
@@ -17,6 +22,11 @@
   --accent: #4382df;
   --border: #333630;
   --grid: #343832;
+  --lvl-0: #222831;
+  --lvl-1: #033a16;
+  --lvl-2: #196c2e;
+  --lvl-3: #2fa043;
+  --lvl-4: #56d364;
 }
 
 *,
@@ -65,7 +75,13 @@ h3 {
   font-size: clamp(1.15rem, 3vw, 1.5rem);
   font-weight: 600;
   line-height: 1.4;
-  margin-top: -3px;
+  margin-bottom: 0.35rem;
+}
+h4 {
+  font-size: clamp(1.15rem, 2vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.4;
+  /* margin-bottom: 0.35rem; */
 }
 img {
   display: block;
@@ -288,6 +304,10 @@ a,
   min-width: 0;
 }
 .date {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   grid-column: 2;
   grid-row: 1;
   margin: 0 0 8px;
@@ -295,6 +315,13 @@ a,
   line-height: 1.5;
   font-size: clamp(0.75rem, 3vw, 1rem);
   white-space: normal;
+}
+.duration {
+  display: inline;
+  margin-top: 2px;
+  font-size: clamp(0.65rem, 3vw, 0.9rem);
+  color: var(--muted);
+  opacity: 0.8;
 }
 .dot {
   position: relative;
@@ -371,20 +398,6 @@ a,
   line-height: 1.5;
   border: 1px solid var(--border);
   border-radius: 999px;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-.skill {
-  padding: 7px 12px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 500;
 }
 
 .github-section {
@@ -480,19 +493,19 @@ a,
   min-width: 0;
 }
 .github-day[data-level="0"] {
-  background: #ebedf0;
+  background: var(--lvl-0);
 }
 .github-day[data-level="1"] {
-  background: #aceebb;
+  background: var(--lvl-1);
 }
 .github-day[data-level="2"] {
-  background: #2da44e;
+  background: var(--lvl-2);
 }
 .github-day[data-level="3"] {
-  background: #2da44e;
+  background: var(--lvl-3);
 }
 .github-day[data-level="4"] {
-  background: #116329;
+  background: var(--lvl-4);
 }
 .github-calendar .github-day:hover {
   outline: 2px solid #68717d;
@@ -574,23 +587,26 @@ a,
     top: 10px;
     bottom: -1px;
   }
+  .list-item > div {
+    grid-column: 3;
+    grid-row: 1;
+  }
 
   .date {
+    display: block;
     grid-column: 1;
     grid-row: 1;
     white-space: nowrap;
   }
-
+  .duration {
+    display: block;
+    margin-top: 2px;
+  }
   .dot {
     grid-column: 2;
     grid-row: 1;
     left: 3px;
     margin-top: 4px;
-  }
-
-  .list-item > div {
-    grid-column: 3;
-    grid-row: 1;
   }
 
   .title {
