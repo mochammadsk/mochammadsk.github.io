@@ -339,7 +339,7 @@ a,
   box-shadow: 0 0 0 1px var(--border);
 }
 .dot-active {
-  background: #76c457;
+  background: var(--lvl-3);
   animation: experience-pulse 2s ease-in-out infinite;
 }
 
