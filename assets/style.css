@@ -366,6 +366,9 @@ a,
 .card > div {
   padding: 1.25rem;
 }
+.card > img {
+  aspect-ratio: 466 / 262;
+}
 
 .desc {
   max-width: 47.5rem;
