@@ -89,6 +89,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  object-fit: cover;
   user-select: none;
   pointer-events: none;
   -webkit-user-select: none;
@@ -202,10 +203,9 @@ a,
 .avatar {
   width: 6rem;
   height: 6rem;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   flex: 0 0 auto;
-  object-fit: cover;
-  border: 4px solid #fff;
+  border: 4px solid #e8eaed;
   border-radius: 50%;
   box-shadow: 0 16px 36px rgb(16 20 29 / 12%);
   transition:
@@ -367,7 +367,7 @@ a,
   padding: 1.25rem;
 }
 .card > img {
-  aspect-ratio: 466 / 262;
+  aspect-ratio: 16 / 9;
 }
 
 .desc {
